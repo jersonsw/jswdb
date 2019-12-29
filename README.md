@@ -19,3 +19,7 @@ The following are the technologies I'm using for build this project:
 * [**PostgreSQL**](https://www.postgresql.org/): Database used for storing the data extracted from the IMDb website. The driver for this database is included as dependency in the infrastructure module (**main**).
 * [**Jsoup**](https://jsoup.org/): A Java-based library for scraping and parsing HTML from a URL, file, or string.
 * [**ReactJS**](https://es.reactjs.org/): Javascript library for building UIs.
+
+Below you can see a screenshot of the view of an in-progress job execution:
+
+![Job Execution](https://github.com/jersonsw/jswdb/blob/master/JSWDb%20UI.png?raw=true)
