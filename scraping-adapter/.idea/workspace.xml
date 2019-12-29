@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa37b427-fef9-4de9-8550-f5a78add14dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMovieBaseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMovieBaseInfoUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMovieGenres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMovieGenresUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMoviesIds.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMoviesIdsUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMoviesPagination.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core/src/main/java/io/inouty/jswdb/core/usecases/ScrapeMoviesPaginationUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/configs/MainConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/configs/UseCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/configs/UseCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/jobs/JSWDbJob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/listeners/ImdbJobListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/listeners/ImdbJobListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/readers/ImdbItemsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/readers/ImdbItemsReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/domain/MovieCrawler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/dtos/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/dtos/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/enums/EventStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/http/configs/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/http/controllers/JobsHttpController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/ws/configs/MessageBrokerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/ws/controllers/JobsWsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/ws/listeners/EventsListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/inouty/jswdb/scraping/MovieItemScraperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/inouty/jswdb/scraping/MovieItemScraperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/inouty/jswdb/scraping/MoviesSearchScraperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/inouty/jswdb/scraping/MoviesSearchScraperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/inouty/jswdb/scraping/MovieItemScraperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/inouty/jswdb/scraping/MovieItemScraperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/inouty/jswdb/scraping/MoviesSearchScraperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/inouty/jswdb/scraping/MoviesSearchScraperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scraping-adapter-1.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scraping-adapter-1.0.0-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scraping-adapter-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scraping-adapter-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-ui/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../web-ui/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VYf8GINnqhmzO0Eq2GPPRHhaji" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/io/inouty/jswdb/scraping" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\inouty\jswdb\scraping-adapter\src\main\java\io\inouty\jswdb\scraping" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa37b427-fef9-4de9-8550-f5a78add14dd" name="Default Changelist" comment="" />
+      <created>1577434787904</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577434787904</updated>
+      <workItem from="1577434789484" duration="2004000" />
+      <workItem from="1577577194744" duration="593000" />
+      <workItem from="1577679530509" duration="161000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
