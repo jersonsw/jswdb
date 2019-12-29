@@ -10,3 +10,12 @@ The project follows the principles of an [Hexagonal Architecture](https://alista
 * [**main**](https://github.com/jersonsw/jswdb/tree/master/main) (_The infrastructure; the root where the all the above modules gets glued and where the application gets bootstrapped_)
 * [**web-ui**](https://github.com/jersonsw/jswdb/tree/master/web-ui) (_The web interface from which the batch process is started and monitored_)
 ![Hexagonal Architecture](https://github.com/jersonsw/jswdb/blob/master/JSWDb.png?raw=true)
+
+The following are the technologies I'm using for build this project:
+
+* [**Java**](https://docs.oracle.com/en/java/): the language used in the whole project at the backend.
+* [**Spring Boot**](https://spring.io/projects/spring-boot): the framework used for providing infrastructure and autoconfiguration. Also, several dependencies of it are used for exposing http and websocket endpoints, for batch processing, security, validation, etc...It is used at the **main** module.
+* [**Spring Batch**](https://spring.io/projects/spring-batch): It is used in the main module for batch processing.
+* [**PostgreSQL**](https://www.postgresql.org/): Database used for storing the data extracted from the IMDb website. The driver for this database is included as dependency in the infrastructure module (**main**).
+* [**Jsoup**](https://jsoup.org/): A Java-based library for scraping and parsing HTML from a URL, file, or string.
+* [**ReactJS**](https://es.reactjs.org/): Javascript library for building UIs.
