@@ -6,11 +6,11 @@ import io.inouty.jswdb.core.usecases.contracts.OutputUseCase;
 
 import java.util.Set;
 
-public class ScrapeMoviesIds implements OutputUseCase<Set<String>> {
+public class ScrapeMoviesIdsUseCase implements OutputUseCase<Set<String>> {
 
     private final MoviesSearchScraper scraper;
 
-    public ScrapeMoviesIds(MoviesSearchScraper scraper) {
+    public ScrapeMoviesIdsUseCase(MoviesSearchScraper scraper) {
         this.scraper = scraper;
     }
 

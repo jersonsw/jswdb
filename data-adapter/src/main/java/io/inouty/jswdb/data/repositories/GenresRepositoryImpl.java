@@ -1,12 +1,11 @@
 package io.inouty.jswdb.data.repositories;
 
-import io.inouty.jswdb.core.domain.GenreDto;
-import io.inouty.jswdb.core.ports.repositories.GenresRepository;
+import io.inouty.jswdb.core.entities.movie.GenreDto;
+import io.inouty.jswdb.core.usecases.ports.repositories.GenresRepository;
 import io.inouty.jswdb.data.EntityDtoMapper;
 import io.inouty.jswdb.data.entities.Genre;
 import io.inouty.jswdb.data.repositories.jpa.GenresJpaRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;

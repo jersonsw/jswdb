@@ -1,13 +1,12 @@
 package io.inouty.jswdb.batch.listeners;
 
 
-import io.inouty.jswdb.core.domain.MovieDto;
+import io.inouty.jswdb.core.entities.movie.MovieDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.ItemWriteListener;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Component;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

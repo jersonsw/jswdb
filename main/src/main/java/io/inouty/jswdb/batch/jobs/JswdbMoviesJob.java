@@ -6,7 +6,7 @@ import io.inouty.jswdb.batch.listeners.MovieWriterListener;
 import io.inouty.jswdb.batch.processors.ImdbItemsProcessor;
 import io.inouty.jswdb.batch.readers.ImdbItemsReader;
 import io.inouty.jswdb.batch.writers.ImdbMovieWriter;
-import io.inouty.jswdb.core.domain.MovieDto;
+import io.inouty.jswdb.core.entities.movie.MovieDto;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -18,18 +18,18 @@ import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JSWDbJob {
+public class JswdbMoviesJob {
 
-    private JobBuilderFactory jobBuilderFactory;
-    private StepBuilderFactory stepBuilderFactory;
-    private ImdbItemsReader imdbItemsReader;
-    private ImdbMovieWriter imdbMovieWriter;
-    private ImdbItemsProcessor imdbItemsProcessor;
-    private ItemSkipPolicy itemSkipPolicy;
-    private MovieWriterListener movieWriterListener;
-    private TaskExecutor taskExecutor;
+    private final JobBuilderFactory jobBuilderFactory;
+    private final StepBuilderFactory stepBuilderFactory;
+    private final ImdbItemsReader imdbItemsReader;
+    private final ImdbMovieWriter imdbMovieWriter;
+    private final ImdbItemsProcessor imdbItemsProcessor;
+    private final ItemSkipPolicy itemSkipPolicy;
+    private final MovieWriterListener movieWriterListener;
+    private final TaskExecutor taskExecutor;
 
-    public JSWDbJob(
+    public JswdbMoviesJob(
             JobBuilderFactory jobBuilderFactory,
             StepBuilderFactory stepBuilderFactory,
             ImdbItemsReader imdbItemsReader,
@@ -49,9 +49,9 @@ public class JSWDbJob {
         this.taskExecutor = taskExecutor;
     }
 
-    @Bean
-    public Job jswDbProcessorJob(ImdbJobListener imdbJobListener) {
-        return jobBuilderFactory.get("jswDbProcessorJob")
+    @Bean("moviesJob")
+    public Job moviesJob(ImdbJobListener imdbJobListener) {
+        return jobBuilderFactory.get("moviesJob")
                 .incrementer(new RunIdIncrementer())
                 .listener(imdbJobListener)
                 .start(step1())
@@ -60,7 +60,7 @@ public class JSWDbJob {
 
     @Bean()
     public Step step1() {
-        return stepBuilderFactory.get("jswdb-step-1")
+        return stepBuilderFactory.get("moviesJobStep1")
                 .<String, MovieDto>chunk(1)
                 .reader(imdbItemsReader)
                 .processor(imdbItemsProcessor)

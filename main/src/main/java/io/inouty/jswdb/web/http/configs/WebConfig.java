@@ -1,4 +1,4 @@
-package io.inouty.jswdb.http.configs;
+package io.inouty.jswdb.web.http.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

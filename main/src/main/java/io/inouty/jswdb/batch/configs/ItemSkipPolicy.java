@@ -1,6 +1,6 @@
 package io.inouty.jswdb.batch.configs;
 
-import io.inouty.jswdb.core.exceptions.Skippable;
+import io.inouty.jswdb.core.usecases.exceptions.Skippable;
 import org.springframework.batch.core.step.skip.SkipLimitExceededException;
 import org.springframework.batch.core.step.skip.SkipPolicy;
 import org.springframework.stereotype.Component;

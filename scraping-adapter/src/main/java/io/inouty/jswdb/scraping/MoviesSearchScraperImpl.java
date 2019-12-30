@@ -1,16 +1,14 @@
 package io.inouty.jswdb.scraping;
 
-
-import io.inouty.jswdb.core.domain.SearchPagination;
-import io.inouty.jswdb.core.exceptions.ConnectionFailedException;
-import io.inouty.jswdb.core.ports.scrapers.MoviesSearchScraper;
+import io.inouty.jswdb.core.entities.SearchPagination;
+import io.inouty.jswdb.core.usecases.exceptions.ConnectionFailedException;
+import io.inouty.jswdb.core.usecases.ports.scrapers.MoviesSearchScraper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Optional;

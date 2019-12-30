@@ -1,4 +1,4 @@
-package io.inouty.jswdb.enums;
+package io.inouty.jswdb.dtos;
 
 public enum EventStatus {
     JOB_RUNNING,

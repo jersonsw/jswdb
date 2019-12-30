@@ -6,11 +6,11 @@ import io.inouty.jswdb.core.usecases.ports.scrapers.MovieItemScraper;
 import io.inouty.jswdb.core.usecases.contracts.UseCase;
 import java.util.Set;
 
-public class ScrapeMovieGenres implements UseCase<Set<GenreDto>, Set<GenreDto>> {
+public class ScrapeMovieGenresUseCase implements UseCase<Set<GenreDto>, Set<GenreDto>> {
 
     private MovieItemScraper scraper;
 
-    public ScrapeMovieGenres(MovieItemScraper scraper) {
+    public ScrapeMovieGenresUseCase(MovieItemScraper scraper) {
         this.scraper = scraper;
     }
 

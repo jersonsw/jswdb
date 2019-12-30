@@ -12,7 +12,7 @@ import org.springframework.core.task.TaskExecutor;
 
 @Configuration
 @EnableBatchProcessing()
-public class MainConfig {
+public class BatchConfig {
 
     @Value("${spring.batch.concurrency-limit}")
     private Integer concurrencyLimit;

@@ -1,4 +1,4 @@
-package io.inouty.jswdb.http.controllers;
+package io.inouty.jswdb.web.http.controllers;
 
 import io.inouty.jswdb.dtos.Request;
 import org.slf4j.Logger;
@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class JobsHttpController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JobsHttpController.class);
-    private JobLauncher jobLauncher;
-    private Job jswDbProcessorJob;
+    private final JobLauncher jobLauncher;
+    private final Job moviesJob;
 
 
-    public JobsHttpController(@Qualifier("jswDbProcessorJob") Job jswDbProcessorJob, JobLauncher jobLauncher) {
-        this.jswDbProcessorJob = jswDbProcessorJob;
+    public JobsHttpController(@Qualifier("moviesJob") Job moviesJob, JobLauncher jobLauncher) {
+        this.moviesJob = moviesJob;
         this.jobLauncher = jobLauncher;
     }
 
@@ -34,12 +34,12 @@ public class JobsHttpController {
     @PostMapping("/run")
     public ResponseEntity<?> execute(@RequestBody Request request) {
         try {
-            JobParameters jobParameters = new JobParametersBuilder()
+            final JobParameters jobParameters = new JobParametersBuilder()
                     .addDate("startDate", request.getStartDate())
                     .addDate("endDate", request.getEndDate())
                     .addLong("timestamp", System.currentTimeMillis())
                     .toJobParameters();
-            JobExecution jobExecution = this.jobLauncher.run(this.jswDbProcessorJob, jobParameters);
+            final JobExecution jobExecution = this.jobLauncher.run(this.moviesJob, jobParameters);
             return ResponseEntity.ok(jobExecution.getStatus().getBatchStatus());
         } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException | JobParametersInvalidException e) {
             LOGGER.error("Job execution error", e);

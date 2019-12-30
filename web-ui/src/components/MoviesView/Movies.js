@@ -42,10 +42,12 @@ class Movies extends React.Component {
         this.disconnect = this.disconnect.bind(this);
         this.reconnectOrDisconnect = this.reconnectOrDisconnect.bind(this);
         this.updateProgress = this.updateProgress.bind(this);
+        this.resetValues = this.resetValues.bind(this);
     }
 
     runCrawler(event) {
         event.preventDefault();
+        this.resetValues();
         const {movies: [], dateRange: {start: startDate, end: endDate}} = this.state;
         stompClient.send('/app/jobs/run', {}, JSON.stringify({
             startDate: moment(startDate).format('YYYY-MM-DD'),
@@ -61,6 +63,19 @@ class Movies extends React.Component {
         this.connect();
     }
 
+    resetValues(){
+        this.setState({
+            movies: [],
+            progress: {
+                recordsCount: null,
+                recordsWritten: null
+            },
+            event: {
+                status: null,
+                message: ''
+            }
+        });
+    }
 
     reconnect() {
         const {connected, connecting} = this.state;
@@ -93,7 +108,12 @@ class Movies extends React.Component {
     }
 
     reconnectOrDisconnect(connect) {
-        connect ? this.reconnect() : this.disconnect();
+        if (connect) {
+            this.reconnect()
+        } else {
+            stompClient.send('/app/jobs/stop', {});
+            this.disconnect();
+        }
     }
 
     onConnected(resp) {
@@ -157,10 +177,10 @@ class Movies extends React.Component {
         const endTime = moment(progress.endTime);
         const duration = moment.duration(endTime.diff(startTime));
         const elapsedTime = duration.asSeconds().toFixed(0);
-        const elapsedStr = parseInt(elapsedTime/3600) + 'h ' + parseInt((elapsedTime%3600)/60) + 'm ' + (parseInt((elapsedTime%3600)%60)) + 's';
+        const elapsedStr = parseInt(elapsedTime / 3600) + 'h ' + parseInt((elapsedTime % 3600) / 60) + 'm ' + (parseInt((elapsedTime % 3600) % 60)) + 's';
         const secondsPerRecord = parseInt(elapsedTime / progress.recordsWritten);
         const timeLeftSeconds = secondsPerRecord * recordsLeft;
-        const timeLeftStr = parseInt(timeLeftSeconds/3600) + 'h ' + parseInt((timeLeftSeconds%3600)/60) + 'm ' + (parseInt((timeLeftSeconds%3600)%60)) + 's';
+        const timeLeftStr = parseInt(timeLeftSeconds / 3600) + 'h ' + parseInt((timeLeftSeconds % 3600) / 60) + 'm ' + (parseInt((timeLeftSeconds % 3600) % 60)) + 's';
 
         return (
             <ContentWrapper>
@@ -246,7 +266,10 @@ class Movies extends React.Component {
                         <div>
                             {progress.recordsCount && progress.recordsWritten && <h4 className={'mt-2 mb-2'}>
                                 {progress.recordsWritten.toLocaleString()} / {progress.recordsCount.toLocaleString()} ({parseFloat((progress.recordsWritten / progress.recordsCount) * 100).toFixed(2)}%)
-                                <span className={'text-muted mr-3 ml-3'}>|</span> Elapsed: <span className={'text-info'}>{elapsedStr}</span><span className={'text-muted mr-3 ml-3'}>|</span>Left: <span className={'text-info'}>{timeLeftStr}</span>
+                                <span className={'text-muted mr-3 ml-3'}>|</span> Elapsed: <span
+                                className={'text-info'}>{elapsedStr}</span><span
+                                className={'text-muted mr-3 ml-3'}>|</span>Left: <span
+                                className={'text-info'}>{timeLeftStr}</span>
                                 <div className="progress progress-sm mt-3">
                                     <div
                                         className={"progress-bar progress-bar-striped progress-bar-animated bg-" + (connected ? 'success' : (connecting ? 'warning' : 'danger'))}

@@ -1,9 +1,9 @@
 package io.inouty.jswdb.batch.readers;
 
-import io.inouty.jswdb.core.domain.SearchPagination;
-import io.inouty.jswdb.core.ports.scrapers.MoviesSearchScraper;
-import io.inouty.jswdb.core.usecases.ScrapeMoviesIds;
-import io.inouty.jswdb.core.usecases.ScrapeMoviesPagination;
+import io.inouty.jswdb.core.entities.SearchPagination;
+import io.inouty.jswdb.core.usecases.ScrapeMoviesIdsUseCase;
+import io.inouty.jswdb.core.usecases.ScrapeMoviesPaginationUseCase;
+import io.inouty.jswdb.core.usecases.ports.scrapers.MoviesSearchScraper;
 import io.inouty.jswdb.scraping.MoviesSearchScraperImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,10 +69,10 @@ public class ImdbItemsReader implements ItemReader<String> {
 
     private void scrape() {
         final MoviesSearchScraper scraper = new MoviesSearchScraperImpl(searchUrl, paginationPattern);
-        final ScrapeMoviesIds scrapeMoviesIds = new ScrapeMoviesIds(scraper);
-        final Set<String> moviesIds = scrapeMoviesIds.execute();
+        final ScrapeMoviesIdsUseCase scrapeMoviesIdsUseCase = new ScrapeMoviesIdsUseCase(scraper);
+        final Set<String> moviesIds = scrapeMoviesIdsUseCase.execute();
         this.moviesIdsDelegate = new IteratorItemReader(moviesIds);
-        final ScrapeMoviesPagination pagScraper = new ScrapeMoviesPagination(scraper);
+        final ScrapeMoviesPaginationUseCase pagScraper = new ScrapeMoviesPaginationUseCase(scraper);
         final SearchPagination pagination = pagScraper.execute();
         if(pagination.getNextPageUrl().isPresent()){
             this.searchUrl = pagination.getNextPageUrl().get();
@@ -82,7 +82,7 @@ public class ImdbItemsReader implements ItemReader<String> {
 
     @Override
     public synchronized String read() throws Exception {
-        if (this.searchUrl == null) {
+        if (searchUrl == null) {
             return null;
         }
         if (moviesIdsDelegate == null) {

@@ -1,10 +1,10 @@
 package io.inouty.jswdb.batch.processors;
 
-import io.inouty.jswdb.core.domain.GenreDto;
-import io.inouty.jswdb.core.domain.MovieDto;
-import io.inouty.jswdb.core.ports.scrapers.MovieItemScraper;
-import io.inouty.jswdb.core.usecases.GetAllGenres;
-import io.inouty.jswdb.core.usecases.ScrapeMovieBaseInfo;
+import io.inouty.jswdb.core.entities.movie.GenreDto;
+import io.inouty.jswdb.core.entities.movie.MovieDto;
+import io.inouty.jswdb.core.usecases.GetAllGenresUseCase;
+import io.inouty.jswdb.core.usecases.ScrapeMovieBaseInfoUseCase;
+import io.inouty.jswdb.core.usecases.ports.scrapers.MovieItemScraper;
 import io.inouty.jswdb.scraping.MovieItemScraperImpl;
 import org.springframework.batch.core.annotation.BeforeStep;
 import org.springframework.batch.item.ItemProcessor;
@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
 @Component
 public class ImdbItemsProcessor implements ItemProcessor<String, MovieDto> {
 
-    private final GetAllGenres getAllGenres;
+    private final GetAllGenresUseCase getAllGenresUseCase;
 
     private List<GenreDto> genres = new ArrayList<>();
 
@@ -34,13 +34,13 @@ public class ImdbItemsProcessor implements ItemProcessor<String, MovieDto> {
 
     Map<String, Pattern> patterns;
 
-    public ImdbItemsProcessor(GetAllGenres getAllGenres) {
-        this.getAllGenres = getAllGenres;
+    public ImdbItemsProcessor(GetAllGenresUseCase getAllGenresUseCase) {
+        this.getAllGenresUseCase = getAllGenresUseCase;
     }
 
     @BeforeStep()
     public void beforeStep() {
-        this.genres = this.getAllGenres.execute();
+        this.genres = this.getAllGenresUseCase.execute();
         this.urlsTemplates = new HashMap<String, String>() {{
             put("movieUrlTemplate", movieUrlTemplate);
         }};
@@ -52,7 +52,7 @@ public class ImdbItemsProcessor implements ItemProcessor<String, MovieDto> {
     @Override
     public synchronized MovieDto process(String movieId) {
         final MovieItemScraper scraper = new MovieItemScraperImpl(movieId, urlsTemplates, patterns);
-        final ScrapeMovieBaseInfo scrapeMovies = new ScrapeMovieBaseInfo(scraper);
+        final ScrapeMovieBaseInfoUseCase scrapeMovies = new ScrapeMovieBaseInfoUseCase(scraper);
         final MovieDto movie = scrapeMovies.execute();
         return movie;
     }

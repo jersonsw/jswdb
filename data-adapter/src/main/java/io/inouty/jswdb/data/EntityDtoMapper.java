@@ -1,6 +1,6 @@
 package io.inouty.jswdb.data;
 
-import io.inouty.jswdb.core.domain.*;
+import io.inouty.jswdb.core.entities.movie.*;
 import io.inouty.jswdb.data.entities.*;
 import io.inouty.jswdb.data.entities.Character;
 import java.util.stream.Collectors;

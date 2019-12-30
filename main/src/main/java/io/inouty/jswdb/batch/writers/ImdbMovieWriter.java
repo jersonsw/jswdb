@@ -1,7 +1,7 @@
 package io.inouty.jswdb.batch.writers;
 
-import io.inouty.jswdb.core.domain.MovieDto;
-import io.inouty.jswdb.core.usecases.CreateMovies;
+import io.inouty.jswdb.core.entities.movie.MovieDto;
+import io.inouty.jswdb.core.usecases.CreateMoviesUseCase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepExecution;
@@ -22,14 +22,14 @@ public class ImdbMovieWriter implements ItemWriter<MovieDto> {
     private static final Map<String, Object> HEADERS = new HashMap<String, Object>() {{
         put("Content-Type", "application/json");
     }};
-    private final CreateMovies createMovies;
+    private final CreateMoviesUseCase createMoviesUseCase;
     private ExecutionContext context;
     private int moviesWritten = 0;
     private SimpMessageSendingOperations messagingTemplate;
 
 
-    public ImdbMovieWriter(CreateMovies createMovies, SimpMessageSendingOperations messagingTemplate) {
-        this.createMovies = createMovies;
+    public ImdbMovieWriter(CreateMoviesUseCase createMoviesUseCase, SimpMessageSendingOperations messagingTemplate) {
+        this.createMoviesUseCase = createMoviesUseCase;
         this.messagingTemplate = messagingTemplate;
     }
 
@@ -41,7 +41,7 @@ public class ImdbMovieWriter implements ItemWriter<MovieDto> {
     @Override
     public synchronized void write(List<? extends MovieDto> movies) {
         try {
-            this.createMovies.execute((List<MovieDto>) movies);
+            this.createMoviesUseCase.execute((List<MovieDto>) movies);
             moviesWritten += movies.size();
             Integer recordsCount = context.getInt("recordsCount");
             Long startTime = context.getLong("startTime");

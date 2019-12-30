@@ -1,7 +1,7 @@
 package io.inouty.jswdb.batch.listeners;
 
 import io.inouty.jswdb.dtos.Event;
-import io.inouty.jswdb.enums.EventStatus;
+import io.inouty.jswdb.dtos.EventStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.JobExecution;

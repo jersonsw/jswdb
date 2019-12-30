@@ -7,11 +7,11 @@ import io.inouty.jswdb.core.usecases.contracts.OutputUseCase;
 
 import java.util.Optional;
 
-public class ScrapeMoviesPagination implements OutputUseCase<SearchPagination> {
+public class ScrapeMoviesPaginationUseCase implements OutputUseCase<SearchPagination> {
 
     private MoviesSearchScraper scraper;
 
-    public ScrapeMoviesPagination(MoviesSearchScraper scraper) {
+    public ScrapeMoviesPaginationUseCase(MoviesSearchScraper scraper) {
         this.scraper = scraper;
     }
 

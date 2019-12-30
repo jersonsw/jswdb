@@ -1,4 +1,4 @@
-package io.inouty.jswdb.ws.listeners;
+package io.inouty.jswdb.web.ws.listeners;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.context.event.EventListener;

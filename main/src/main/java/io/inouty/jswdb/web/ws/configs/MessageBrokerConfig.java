@@ -1,4 +1,4 @@
-package io.inouty.jswdb.ws.configs;
+package io.inouty.jswdb.web.ws.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

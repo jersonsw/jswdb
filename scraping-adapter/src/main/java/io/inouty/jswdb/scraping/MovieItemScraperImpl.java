@@ -1,9 +1,9 @@
 package io.inouty.jswdb.scraping;
 
-import io.inouty.jswdb.core.domain.GenreDto;
-import io.inouty.jswdb.core.domain.MovieDto;
-import io.inouty.jswdb.core.exceptions.ConnectionFailedException;
-import io.inouty.jswdb.core.ports.scrapers.MovieItemScraper;
+import io.inouty.jswdb.core.entities.movie.GenreDto;
+import io.inouty.jswdb.core.entities.movie.MovieDto;
+import io.inouty.jswdb.core.usecases.exceptions.ConnectionFailedException;
+import io.inouty.jswdb.core.usecases.ports.scrapers.MovieItemScraper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

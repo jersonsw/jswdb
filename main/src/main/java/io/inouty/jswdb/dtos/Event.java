@@ -1,7 +1,5 @@
 package io.inouty.jswdb.dtos;
 
-import io.inouty.jswdb.enums.EventStatus;
-
 public class Event {
 
     private EventStatus status;

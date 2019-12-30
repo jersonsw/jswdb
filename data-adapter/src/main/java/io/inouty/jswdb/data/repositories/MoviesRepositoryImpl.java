@@ -1,12 +1,11 @@
 package io.inouty.jswdb.data.repositories;
 
-import io.inouty.jswdb.core.domain.MovieDto;
-import io.inouty.jswdb.core.ports.repositories.MoviesRepository;
+import io.inouty.jswdb.core.entities.movie.MovieDto;
+import io.inouty.jswdb.core.usecases.ports.repositories.MoviesRepository;
 import io.inouty.jswdb.data.EntityDtoMapper;
 import io.inouty.jswdb.data.entities.Movie;
 import io.inouty.jswdb.data.repositories.jpa.MoviesJpaRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

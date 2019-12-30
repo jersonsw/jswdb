@@ -4,11 +4,11 @@ import io.inouty.jswdb.core.entities.movie.MovieDto;
 import io.inouty.jswdb.core.usecases.ports.scrapers.MovieItemScraper;
 import io.inouty.jswdb.core.usecases.contracts.OutputUseCase;
 
-public class ScrapeMovieBaseInfo implements OutputUseCase<MovieDto> {
+public class ScrapeMovieBaseInfoUseCase implements OutputUseCase<MovieDto> {
 
     private MovieItemScraper scraper;
 
-    public ScrapeMovieBaseInfo(MovieItemScraper scraper) {
+    public ScrapeMovieBaseInfoUseCase(MovieItemScraper scraper) {
         this.scraper = scraper;
     }
 

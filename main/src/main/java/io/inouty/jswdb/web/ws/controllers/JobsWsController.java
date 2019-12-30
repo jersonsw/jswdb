@@ -1,8 +1,8 @@
-package io.inouty.jswdb.ws.controllers;
+package io.inouty.jswdb.web.ws.controllers;
 
 import io.inouty.jswdb.dtos.Request;
 import io.inouty.jswdb.dtos.Event;
-import io.inouty.jswdb.enums.EventStatus;
+import io.inouty.jswdb.dtos.EventStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.*;
@@ -25,18 +25,18 @@ public class JobsWsController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JobsWsController.class);
     private final JobLauncher jobLauncher;
-    private final Job jswDbProcessorJob;
+    private final Job moviesJob;
     private final JobOperator jobOperator;
     private final SimpMessageSendingOperations messagingTemplate;
 
     public JobsWsController(
             @Qualifier("asyncJobLauncher") JobLauncher jobLauncher,
-            @Qualifier("jswDbProcessorJob") Job jswDbProcessorJob,
+            @Qualifier("moviesJob") Job moviesJob,
             SimpMessageSendingOperations messagingTemplate,
             JobOperator jobOperator
     ) {
         this.jobLauncher = jobLauncher;
-        this.jswDbProcessorJob = jswDbProcessorJob;
+        this.moviesJob = moviesJob;
         this.jobOperator = jobOperator;
         this.messagingTemplate = messagingTemplate;
     }
@@ -50,7 +50,7 @@ public class JobsWsController {
                 .toJobParameters();
         EventStatus eventStatus = EventStatus.JOB_STOPPED;
         try {
-            final JobExecution jobExecution = this.jobLauncher.run(this.jswDbProcessorJob, jobParameters);
+            final JobExecution jobExecution = this.jobLauncher.run(this.moviesJob, jobParameters);
             eventStatus = EventStatus.JOB_RUNNING;
             LOGGER.info("The job that runs the crawler has been launched. Current status: {}", jobExecution.getStatus().name());
             return;
@@ -75,7 +75,7 @@ public class JobsWsController {
         String msg = "All jobs executions have been stopped";
         Set<Long> executions = null;
         try {
-            executions = jobOperator.getRunningExecutions("jswDbProcessorJob");
+            executions = jobOperator.getRunningExecutions("moviesJob");
         } catch (NoSuchJobException e) {
             msg = "No jobs executions found";
             LOGGER.error(msg);
