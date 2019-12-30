@@ -1,2 +1,0 @@
-# jswdb-ui
-JSWDb UI
