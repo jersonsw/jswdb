@@ -1,6 +1,6 @@
 package io.inouty.jswdb.core.usecases;
 
-import io.inouty.jswdb.core.usecases.exceptions.MoviesIdsNotFoundException;
+import io.inouty.jswdb.core.usecases.exceptions.NoMoviesIdsFoundException;
 import io.inouty.jswdb.core.usecases.ports.scrapers.MoviesSearchScraper;
 import io.inouty.jswdb.core.usecases.contracts.OutputUseCase;
 
@@ -20,7 +20,7 @@ public class ScrapeMoviesIdsUseCase implements OutputUseCase<Set<String>> {
         if (!moviesIds.isEmpty()) {
             return moviesIds;
         }
-        throw new MoviesIdsNotFoundException("No movies ids found");
+        throw new NoMoviesIdsFoundException("No movies ids found");
     }
 
 }
