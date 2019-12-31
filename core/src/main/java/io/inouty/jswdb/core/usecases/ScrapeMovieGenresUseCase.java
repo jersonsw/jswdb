@@ -1,9 +1,10 @@
 package io.inouty.jswdb.core.usecases;
 
 import io.inouty.jswdb.core.entities.movie.GenreDto;
-import io.inouty.jswdb.core.usecases.exceptions.NoMovieGenresFoundException;
-import io.inouty.jswdb.core.usecases.ports.scrapers.MovieItemScraper;
 import io.inouty.jswdb.core.usecases.contracts.UseCase;
+import io.inouty.jswdb.core.usecases.exceptions.NoGenresFoundException;
+import io.inouty.jswdb.core.usecases.ports.scrapers.MovieItemScraper;
+
 import java.util.Set;
 
 public class ScrapeMovieGenresUseCase implements UseCase<Set<GenreDto>, Set<GenreDto>> {
@@ -20,7 +21,7 @@ public class ScrapeMovieGenresUseCase implements UseCase<Set<GenreDto>, Set<Genr
         if (genres != null && !genres.isEmpty()) {
             return genres;
         }
-        throw new NoMovieGenresFoundException("No genres found");
+        throw new NoGenresFoundException("No genres found");
     }
 
 

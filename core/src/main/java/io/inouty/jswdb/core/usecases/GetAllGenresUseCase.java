@@ -1,6 +1,7 @@
 package io.inouty.jswdb.core.usecases;
 
 import io.inouty.jswdb.core.entities.movie.GenreDto;
+import io.inouty.jswdb.core.usecases.exceptions.NoGenresFoundException;
 import io.inouty.jswdb.core.usecases.ports.repositories.GenresRepository;
 import io.inouty.jswdb.core.usecases.contracts.OutputUseCase;
 
@@ -16,6 +17,10 @@ public class GetAllGenresUseCase implements OutputUseCase<List<GenreDto>> {
 
     @Override()
     public List<GenreDto> execute() {
-        return this.repository.findAll();
+        final List<GenreDto> genres = this.repository.findAll();
+        if (genres.size() > 0) {
+            return genres;
+        }
+        throw new NoGenresFoundException("No genres found");
     }
 }

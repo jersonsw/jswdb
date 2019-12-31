@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f8280f5-43f8-4174-8c58-bde750a126fc" name="Default Changelist" comment="" />
+    <list default="true" id="3f8280f5-43f8-4174-8c58-bde750a126fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/core/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-adapter/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping-adapter/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/main/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/testimg.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web-ui/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../jswdb\exportToHTML" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,6 +33,14 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\inouty\jswdb\web-ui" />
+      <recent name="D:\development\inouty\jswdb\scraping-adapter" />
+      <recent name="D:\development\inouty\jswdb\main" />
+      <recent name="D:\development\inouty\jswdb\data-adapter" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -46,7 +66,7 @@
       <updated>1577579712718</updated>
       <workItem from="1577579713905" duration="902000" />
       <workItem from="1577581274554" duration="1871000" />
-      <workItem from="1577683747531" duration="241000" />
+      <workItem from="1577683747531" duration="601000" />
     </task>
     <servers />
   </component>
@@ -65,5 +85,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/core" />
+      <path value="$PROJECT_DIR$/main" />
+      <path value="$PROJECT_DIR$/web-ui" />
+    </ignored-roots>
   </component>
 </project>
