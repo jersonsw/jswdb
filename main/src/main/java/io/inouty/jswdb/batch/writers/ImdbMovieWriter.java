@@ -35,7 +35,7 @@ public class ImdbMovieWriter implements ItemWriter<MovieDto> {
 
     @BeforeStep
     private void beforeStep(StepExecution stepExecution) {
-        this.context = stepExecution.getExecutionContext();
+        this.context = stepExecution.getJobExecution().getExecutionContext();
     }
 
     @Override

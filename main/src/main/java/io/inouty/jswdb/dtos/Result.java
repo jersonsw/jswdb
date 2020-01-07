@@ -1,6 +1,7 @@
 package io.inouty.jswdb.dtos;
 
-import io.inouty.jswdb.core.domain.MovieDto;
+import io.inouty.jswdb.core.entities.movie.MovieDto;
+
 import java.util.List;
 
 public class Result {
