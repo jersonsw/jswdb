@@ -10,6 +10,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.sql.Time;
 import java.util.Collections;
@@ -107,7 +108,9 @@ public class MovieItemScraperImpl implements MovieItemScraper {
             }
             Element titleH1 = titleWrapper.getElementsByTag("h1").first();
             if (titleH1 != null) {
-                titleH1.getElementById("titleYear").remove();
+                if (titleYearE != null) {
+                    titleYearE.remove();
+                }
                 builder.withTitle(titleH1.text());
             }
         }

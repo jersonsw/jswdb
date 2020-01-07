@@ -9,6 +9,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Optional;
@@ -32,8 +33,7 @@ public class MoviesSearchScraperImpl implements MoviesSearchScraper {
 
     private Document connectAndGetDocument() {
         try {
-            return Jsoup
-                    .connect(searchUrl)
+            return Jsoup.connect(searchUrl)
                     .maxBodySize(0)
                     .get();
         } catch (IOException e) {

@@ -21,16 +21,24 @@ spring:
             non_contextual_creation: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
-    generate-ddl: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
   batch:
     job:
       enabled: false
-    initialize-schema: always
+    initialize-schema: never
     concurrency-limit: 4
+    table-prefix: batch.
   security:
     user:
       name: jswdb
       password: secret
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+  main:
+    allow-bean-definition-overriding: true
 logging:
   level:
     root: info
