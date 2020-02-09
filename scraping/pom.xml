@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.inouty.jswdb</groupId>
+        <artifactId>jswdb</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <groupId>io.inouty.jswdb</groupId>
+    <artifactId>scraping</artifactId>
+    <name>scraping</name>
+    <description>JSWDb Scraping</description>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>io.inouty.jswdb</groupId>
+            <artifactId>domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.inouty.jswdb</groupId>
+            <artifactId>usecases</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+</project>

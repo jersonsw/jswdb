@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/jswdb.iml" filepath="$PROJECT_DIR$/.idea/jswdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jswdb.iml" filepath="$PROJECT_DIR$/jswdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main/main.iml" filepath="$PROJECT_DIR$/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scraping/scraping.iml" filepath="$PROJECT_DIR$/scraping/scraping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usecases/usecases.iml" filepath="$PROJECT_DIR$/usecases/usecases.iml" />
     </modules>
   </component>
 </project>

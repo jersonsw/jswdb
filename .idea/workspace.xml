@@ -1,15 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f8280f5-43f8-4174-8c58-bde750a126fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-adapter/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping-adapter/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/main/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/testimg.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web-ui/README.md" afterDir="false" />
+    <list default="true" id="db16915e-a8a5-452b-a99a-7a230eb482dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/EntityDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/GenresRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/MoviesRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/Actor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/Character.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/Director.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieActorCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieActorCharacterId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieDirector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieDirectorId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieGenre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieGenreId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/MovieWriterId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/ReleaseInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/entities/Writer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/jpa/repositories/GenresJpaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/jpa/repositories/MoviesJpaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/projections/MovieIdProjection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/io/inouty/jswdb/data/projections/MovieProjection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/Pagination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/Payload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/SearchPagination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/Version.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/ActorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/CharacterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/DirectorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/GenreDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieActorCharacterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieActorCharacterIdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieDirectorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieDirectorIdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieGenreDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieGenreIdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieWriterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/MovieWriterIdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/ReleaseInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/io/inouty/jswdb/domain/movie/WriterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/src/test/java/io/inouty/jswdb/main/resources/application-test.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/src/test/java/io/inouty/jswdb/main/resources/db/migration/V1__init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/src/main/java/io/inouty/jswdb/scraping/MovieItemScraperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraping/src/main/java/io/inouty/jswdb/scraping/MoviesSearchScraperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/CreateMoviesUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/GetAllGenresUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ScrapeMovieBaseInfoUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ScrapeMovieGenresUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ScrapeMoviesIdsUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ScrapeMoviesPaginationUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/contracts/InputUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/contracts/OutputUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/contracts/UseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/contracts/VoidUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/exceptions/ConnectionFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/exceptions/NoGenresFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/exceptions/NoMorePagesException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/exceptions/NoMoviesIdsFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/exceptions/PaginationInfoNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/exceptions/Skippable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ports/repositories/GenresRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ports/repositories/MoviesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ports/scrapers/MovieItemScraper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/main/java/io/inouty/jswdb/usecases/ports/scrapers/MoviesSearchScraper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/test/java/io/inouty/jswdb/usecases/CreateMoviesUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/test/java/io/inouty/jswdb/usecases/GetAllGenresUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/test/java/io/inouty/jswdb/usecases/ScrapeMovieBaseInfoUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/test/java/io/inouty/jswdb/usecases/ScrapeMovieGenresUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/test/java/io/inouty/jswdb/usecases/ScrapeMoviesIdsUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usecases/src/test/java/io/inouty/jswdb/usecases/ScrapeMoviesPaginationUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/configs/BatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/configs/BatchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/configs/ItemSkipPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/configs/ItemSkipPolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/jobs/JswdbMoviesJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/jobs/JswdbMoviesJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/listeners/ImdbJobListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/listeners/ImdbJobListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/listeners/MovieWriterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/listeners/MovieWriterListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/processors/ImdbItemsProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/processors/ImdbItemsProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/readers/ImdbItemsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/readers/ImdbItemsReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/batch/writers/ImdbMovieWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/batch/writers/ImdbMovieWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/config/UseCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/config/UseCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/dtos/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/dtos/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/dtos/EventStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/dtos/EventStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/dtos/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/dtos/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/dtos/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/dtos/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/utils/DatesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/utils/DatesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/utils/DownloadUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/utils/DownloadUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/utils/MonthUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/utils/MonthUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/utils/NumbersUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/utils/NumbersUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/utils/StringsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/utils/StringsUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/web/http/configs/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/web/http/configs/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/web/http/controllers/JobsHttpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/web/http/controllers/JobsHttpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/web/ws/configs/MessageBrokerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/web/ws/configs/MessageBrokerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/web/ws/controllers/JobsWsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/web/ws/controllers/JobsWsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/java/io/inouty/jswdb/web/ws/listeners/EventsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/io/inouty/jswdb/main/web/ws/listeners/EventsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/resources/banner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/test/java/io/inouty/jswdb/batch/jobs/JswdbMoviesJobIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/test/resources/application-test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/src/test/resources/db/migration/V1__init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping-adapter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../scraping-adapter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-ui/src/components/MoviesView/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-ui/src/components/MoviesView/Movies.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,29 +157,110 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExportToHTMLSettings">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../jswdb\exportToHTML" />
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="H2 - testdb" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="H2 - testdb" type="feb32156:DbDataSourceImpl" />
+        <item name="TESTDB: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="jswdb-crawler" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1VdOsX7zLsFiYJKNIF8mHtoRUgJ" />
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1T9twq1Tyf3m9oiWBKRkTWvhru5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-ui" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="D:\Programs\IntelliJ IDEA 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="io.inouty.jswdb.batch.jobs" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.inouty.jswdb.usecases" />
+      <recent name="io.inouty.jswdb.root" />
+      <recent name="io.inouty.jswdb" />
+    </key>
+    <key name="CreateBuilderDialog.RecentsKey">
+      <recent name="io.inouty.jswdb" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\development\inouty\jswdb\web-ui" />
-      <recent name="D:\development\inouty\jswdb\scraping-adapter" />
-      <recent name="D:\development\inouty\jswdb\main" />
-      <recent name="D:\development\inouty\jswdb\data-adapter" />
+      <recent name="D:\development\inouty\jswdb\main\usecases\src\main\java\io\inouty\jswdb\usecases" />
+      <recent name="D:\development\inouty\jswdb\main\scraping\src\main\java\io\inouty\jswdb\scraping" />
+      <recent name="D:\development\inouty\jswdb\main\domain\src\main\java\io\inouty\jswdb\domain" />
+      <recent name="D:\development\inouty\jswdb\main\data\src\main\java\io\inouty\jswdb\data" />
+      <recent name="D:\development\inouty\jswdb\main\src\test\resources\db\migration" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.inouty.abp.listeners" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\development\inouty\jswdb\main\root\src\main\resources" />
+      <recent name="D:\development\inouty\jswdb\main\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -54,19 +275,179 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Spring Boot.JSWDb">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.inouty.jswdb.Test" />
+      <module name="jswdb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.inouty.jswdb.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests" type="JUnit" factoryName="JUnit">
+      <module name="jswdb" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <option name="PARAMETERS" value="" />
+      <envs>
+        <env name="spring.profiles.active" value="test" />
+      </envs>
+      <dir value="$PROJECT_DIR$/main/src/test/java/io" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JSWDb" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="main" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.inouty.jswdb.main.Application" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="JUnit.Tests" />
+      <item itemvalue="Spring Boot.JSWDb" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4a9b8ff" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4a9b8ff" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1214387a" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3f8280f5-43f8-4174-8c58-bde750a126fc" name="Default Changelist" comment="" />
-      <created>1577579712718</created>
+      <changelist id="db16915e-a8a5-452b-a99a-7a230eb482dc" name="Default Changelist" comment="" />
+      <created>1572884380163</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1577579712718</updated>
-      <workItem from="1577579713905" duration="902000" />
-      <workItem from="1577581274554" duration="1871000" />
-      <workItem from="1577683747531" duration="601000" />
+      <updated>1572884380163</updated>
+      <workItem from="1572884381898" duration="499000" />
+      <workItem from="1572899338360" duration="22325000" />
+      <workItem from="1573006919941" duration="1378000" />
+      <workItem from="1573008479975" duration="1973000" />
+      <workItem from="1573058814487" duration="48000" />
+      <workItem from="1573058910441" duration="16397000" />
+      <workItem from="1573094105794" duration="32811000" />
+      <workItem from="1573172827840" duration="13162000" />
+      <workItem from="1573316363796" duration="10706000" />
+      <workItem from="1573433155530" duration="184000" />
+      <workItem from="1573436348595" duration="394000" />
+      <workItem from="1573436838986" duration="3320000" />
+      <workItem from="1573485731629" duration="9627000" />
+      <workItem from="1573577511127" duration="1265000" />
+      <workItem from="1573667718250" duration="18370000" />
+      <workItem from="1574029368558" duration="12215000" />
+      <workItem from="1574119290495" duration="2257000" />
+      <workItem from="1574209750570" duration="2315000" />
+      <workItem from="1574355231422" duration="1096000" />
+      <workItem from="1574356713213" duration="436000" />
+      <workItem from="1574883341118" duration="85000" />
+      <workItem from="1575322615808" duration="11256000" />
+      <workItem from="1575416541237" duration="1994000" />
+      <workItem from="1575418671446" duration="2809000" />
+      <workItem from="1575478858279" duration="31523000" />
+      <workItem from="1575514316786" duration="1112000" />
+      <workItem from="1575515894667" duration="532000" />
+      <workItem from="1575665813891" duration="3690000" />
+      <workItem from="1575691722143" duration="7059000" />
+      <workItem from="1575764573946" duration="34798000" />
+      <workItem from="1575908534144" duration="9941000" />
+      <workItem from="1575949136246" duration="2319000" />
+      <workItem from="1575995039593" duration="15705000" />
+      <workItem from="1576107330561" duration="2041000" />
+      <workItem from="1576114168564" duration="494000" />
+      <workItem from="1576120459569" duration="6555000" />
+      <workItem from="1576169199233" duration="22399000" />
+      <workItem from="1576205161259" duration="517000" />
+      <workItem from="1576206359338" duration="2885000" />
+      <workItem from="1576255645372" duration="3060000" />
+      <workItem from="1576259157831" duration="498000" />
+      <workItem from="1576259685385" duration="11115000" />
+      <workItem from="1576287324728" duration="20847000" />
+      <workItem from="1576434186533" duration="54962000" />
+      <workItem from="1576954227767" duration="26156000" />
+      <workItem from="1577058202696" duration="14000" />
+      <workItem from="1577436072783" duration="2714000" />
+      <workItem from="1577475230202" duration="60000" />
+      <workItem from="1577579056973" duration="592000" />
+      <workItem from="1577595331979" duration="469000" />
+      <workItem from="1577677554443" duration="6551000" />
+      <workItem from="1577731551273" duration="631000" />
+      <workItem from="1577839069531" duration="626000" />
+      <workItem from="1577934578917" duration="42609000" />
+      <workItem from="1578079440651" duration="2550000" />
+      <workItem from="1578085120912" duration="10347000" />
+      <workItem from="1578262874008" duration="20000" />
+      <workItem from="1578266875589" duration="9679000" />
+      <workItem from="1578324437599" duration="17471000" />
+      <workItem from="1578351640396" duration="16616000" />
+      <workItem from="1578370287593" duration="5137000" />
+      <workItem from="1578450209703" duration="619000" />
+      <workItem from="1578540083977" duration="255000" />
+      <workItem from="1579014683570" duration="40000" />
+      <workItem from="1579064353346" duration="25000" />
+      <workItem from="1579064702643" duration="308000" />
+      <workItem from="1580847850704" duration="2438000" />
+      <workItem from="1580857072282" duration="7000" />
+      <workItem from="1580864884560" duration="4610000" />
+      <workItem from="1580875611634" duration="756000" />
+      <workItem from="1581031612789" duration="66000" />
+      <workItem from="1581031702734" duration="6420000" />
+      <workItem from="1581038183511" duration="85000" />
+      <workItem from="1581038363004" duration="18573000" />
+      <workItem from="1581192638861" duration="10895000" />
     </task>
     <servers />
   </component>
@@ -88,9 +469,47 @@
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
-      <path value="$PROJECT_DIR$/core" />
-      <path value="$PROJECT_DIR$/main" />
-      <path value="$PROJECT_DIR$/web-ui" />
+      <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/inouty/commons/1.0.1/commons-1.0.1-sources.jar!/com/inouty/commons/repositories/MoviesRepositoryImpl.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/inouty/commons/1.0.1/commons-1.0.1-sources.jar!/com/inouty/commons/repositories/MoviesRepositoryImpl.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../../equations/src/main/java/io/inouty/EquationsApplication.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.200/h2-1.4.200-sources.jar!/org/h2/jdbc/JdbcResultSet.java</url>
+          <line>3168</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/io/inouty/jswdb/scraping-adapter/1.0.0/scraping-adapter-1.0.0-sources.jar!/io/inouty/jswdb/scraping/MovieItemScraperImpl.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/jswdb_crawler$JswDbCrawlerApplication.ic" NAME="JswDbCrawlerApplication Coverage Results" MODIFIED="1573188411669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/main$Tests.ic" NAME="Tests Coverage Results" MODIFIED="1578354847728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

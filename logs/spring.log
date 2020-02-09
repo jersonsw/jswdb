@@ -1,0 +1,151 @@
+2020-02-09 00:02:53.137  INFO 3684 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 3684 (D:\development\inouty\jswdb\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb\jswdb)
+2020-02-09 00:02:53.153  INFO 3684 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-09 00:02:53.825  INFO 3684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 00:02:53.903  INFO 3684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 2 JPA repository interfaces.
+2020-02-09 00:02:54.436  INFO 3684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 00:02:54.733  INFO 3684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-09 00:02:54.749  INFO 3684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-09 00:02:54.749  INFO 3684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-09 00:02:54.858  INFO 3684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-09 00:02:54.858  INFO 3684 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1627 ms
+2020-02-09 00:02:55.048  INFO 3684 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 00:02:55.126  INFO 3684 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 00:02:55.267  INFO 3684 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 00:02:55.392  INFO 3684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 00:02:55.548  INFO 3684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 00:02:55.611  INFO 3684 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-09 00:02:57.076  INFO 3684 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 00:02:57.076  INFO 3684 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 00:02:57.170  INFO 3684 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-09 00:02:57.654  INFO 3684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-02-09 00:02:57.654  INFO 3684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-02-09 00:02:57.795  INFO 3684 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-02-09 00:02:57.842  INFO 3684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-02-09 00:02:58.156  WARN 3684 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2020-02-09 00:02:58.156  INFO 3684 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-09 00:02:58.156  INFO 3684 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2020-02-09 00:02:58.234  INFO 3684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-02-09 00:02:58.234  INFO 3684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-09 00:02:58.234  INFO 3684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-02-09 00:02:58.265  INFO 3684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-02-09 00:02:58.281  INFO 3684 --- [main] io.inouty.jswdb.main.Application         : Started Application in 5.771 seconds (JVM running for 9.3)
+2020-02-09 00:03:57.845  INFO 3684 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2020-02-09 00:06:53.133  INFO 12108 --- [main] io.inouty.jswdb.main.Application         : Starting Application v1.0.0 on JersonSW with PID 12108 (D:\development\inouty\jswdb\jswdb\main\target\main-1.0.0.jar started by ingpe in D:\development\inouty\jswdb\jswdb)
+2020-02-09 00:06:53.133  INFO 12108 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-09 00:06:53.998  INFO 12108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 00:06:54.108  INFO 12108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91ms. Found 2 JPA repository interfaces.
+2020-02-09 00:06:54.979  INFO 12108 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 00:06:55.635  INFO 12108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-09 00:06:55.651  INFO 12108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-09 00:06:55.651  INFO 12108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-09 00:06:55.745  INFO 12108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-09 00:06:55.745  INFO 12108 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2487 ms
+2020-02-09 00:06:56.028  INFO 12108 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 00:06:56.137  INFO 12108 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 00:06:56.371  INFO 12108 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 00:06:56.512  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 00:06:56.684  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 00:06:56.715  INFO 12108 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-09 00:06:58.390  INFO 12108 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 00:06:58.390  INFO 12108 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 00:06:58.500  INFO 12108 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-09 00:06:59.486  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-02-09 00:06:59.486  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-02-09 00:06:59.720  INFO 12108 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-02-09 00:06:59.814  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-02-09 00:07:00.352  WARN 12108 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2020-02-09 00:07:00.352  INFO 12108 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-09 00:07:00.352  INFO 12108 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2020-02-09 00:07:00.461  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-02-09 00:07:00.461  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-09 00:07:00.461  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-02-09 00:07:00.493  INFO 12108 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-02-09 00:07:00.508  INFO 12108 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-02-09 00:07:00.508 ERROR 12108 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-02-09 00:07:00.524  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-02-09 00:07:00.524  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-02-09 00:07:00.524  INFO 12108 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 00:07:00.524  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 00:07:00.555  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 00:07:13.931  INFO 5072 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 5072 (D:\development\inouty\jswdb\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb\jswdb)
+2020-02-09 00:07:13.936  INFO 5072 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-09 00:07:14.618  INFO 5072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 00:07:14.681  INFO 5072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 2 JPA repository interfaces.
+2020-02-09 00:07:15.230  INFO 5072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 00:07:15.496  INFO 5072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-09 00:07:15.511  INFO 5072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-09 00:07:15.511  INFO 5072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-09 00:07:15.667  INFO 5072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-09 00:07:15.667  INFO 5072 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1643 ms
+2020-02-09 00:07:15.871  INFO 5072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 00:07:15.949  INFO 5072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 00:07:16.123  INFO 5072 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 00:07:16.264  INFO 5072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 00:07:16.420  INFO 5072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 00:07:16.498  INFO 5072 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-09 00:07:18.028  INFO 5072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 00:07:18.028  INFO 5072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 00:07:18.122  INFO 5072 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-09 00:07:18.637  INFO 5072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-02-09 00:07:18.653  INFO 5072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-02-09 00:07:18.778  INFO 5072 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-02-09 00:07:18.825  INFO 5072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-02-09 00:07:19.155  WARN 5072 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2020-02-09 00:07:19.155  INFO 5072 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-09 00:07:19.155  INFO 5072 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2020-02-09 00:07:19.234  INFO 5072 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-02-09 00:07:19.234  INFO 5072 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-09 00:07:19.234  INFO 5072 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-02-09 00:07:19.265  INFO 5072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-02-09 00:07:19.280  INFO 5072 --- [main] io.inouty.jswdb.main.Application         : Started Application in 6.44 seconds (JVM running for 8.334)
+2020-02-09 00:08:15.744  INFO 5072 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-09 00:08:15.745  INFO 5072 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-09 00:08:15.754  INFO 5072 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-02-09 00:08:18.835  INFO 5072 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[2 current WS(0)-HttpStream(2)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 3, completed tasks = 1]
+2020-02-09 00:08:27.494  INFO 5072 --- [clientInboundChannel-4] i.i.j.m.w.w.c.JobsWsController           : The job that runs the crawler has been launched. Current status: STARTING
+2020-02-09 00:08:27.494  INFO 5072 --- [jswdb-task-executor1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=moviesJob]] launched with the following parameters: [{startDate=946684800000, endDate=1009756800000}]
+2020-02-09 00:08:27.551  INFO 5072 --- [jswdb-task-executor1] i.i.j.m.batch.listeners.ImdbJobListener  : >>>>>>>>>>>>>>>>>>>>>>>>>> JOB STARTED
+2020-02-09 00:08:27.575  INFO 5072 --- [jswdb-task-executor1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [moviesJobStep1]
+2020-02-09 00:08:29.510  INFO 5072 --- [jswdb-task-executor3] i.i.j.scraping.MoviesSearchScraperImpl   : Reading from 1 to 100 of 8065
+2020-02-09 00:09:07.288  WARN 5072 --- [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/javascript;charset=UTF-8']
+2020-02-09 00:09:08.631  WARN 5072 --- [http-nio-8081-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'text/event-stream;charset=UTF-8']
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 00:09:27.210  INFO 5072 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
