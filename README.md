@@ -21,6 +21,8 @@ The following are the technologies I've used for building this project:
 * [**Jsoup**](https://jsoup.org/): A Java-based library for scraping and parsing HTML from a URL, file, or string.
 * [**ReactJS**](https://es.reactjs.org/): Javascript library for building UIs.
 
+The project was built with Maven following a multimodule-based approach, having a parent POM for dependencies management and a child POM for each module.
+
 The below image is a screenshot of the UI in which you can see the progress of the scraping activity:
 
 ![Job Execution](https://github.com/jersonsw/jswdb/blob/master/JSWDb%20UI.png?raw=true)
