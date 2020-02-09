@@ -39,6 +39,7 @@ spring:
     enabled: true
   main:
     allow-bean-definition-overriding: true
+  profiles: dev
 logging:
   level:
     root: info

@@ -1,0 +1,97 @@
+server:
+  port: 8081
+  error:
+    whitelabel:
+      enabled: false
+  tomcat:
+    max-threads: 5
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_ON_EXIT=TRUE
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+    initialization-mode: embedded
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  batch:
+    job:
+      enabled: false
+    initialize-schema: never
+    concurrency-limit: 4
+    table-prefix: batch.
+  security:
+    user:
+      name: jswdb
+      password: secret
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+  main:
+    allow-bean-definition-overriding: true
+logging:
+  level:
+    root: info
+    org:
+      hibernate:
+        type: info
+      springframework:
+        web:
+          client: info
+  file:
+    path: ./logs
+jswdb:
+  image:
+    size:
+      lg:
+        w: 200
+        h: 200
+      md:
+        w: 150
+        h: 150
+      sm:
+        w: 100
+        h: 100
+      xs:
+        w: 50
+        h: 50
+imdb:
+  search:
+    page-size: 100
+  urls:
+    base: https://www.imdb.com
+    full-cast-and-crew: ${imdb.urls.base}/title/%s/fullcredits?ref_=tt_cl_sm
+    search: ${imdb.urls.base}/search/title/?title_type=feature&release_date=%s,%s&view=simple&sort=num_votes,desc&count=%d
+    release-info: ${imdb.urls.base}/title/%s/releaseinfo?ref_=tt_ov_inf
+    item-details: ${imdb.urls.base}/title/%s
+  patterns:
+    release-date: ^(?<day>[0-9]+)[\s]+(?<month>[a-zA-Z]+)[\s]+(?<year>[0-9]{4,})$
+    year-month-release-date: ^(?<month>[a-zA-Z]+)[\s]+(?<year>[0-9]{4,})$
+    year-release-date: ^(?<year>[0-9]{4,})$
+    movieId: ^\/title\/(?<movieId>.+)\/.+$
+    pagination: ^(?<recordStart>[0-9]+|[0-9]+\,[0-9]+)-(?<recordEnd>[0-9]+|[0-9]+\,[0-9]+) of (?<recordsCount>[0-9]+\,[0-9]+|[0-9]+) titles\.$
+    year: \((?<year>[0-9]+)\)
+    duration: ^(?<amount>[0-9]+)[\s]+(?<unit>.+)$
+    country-code: ^(.+)region\=(?<countryCode>.+)&(.+)$
+    credit: /\((?<credit>.+)\)/gU
+    profileId: ^\/name\/(?<profileId>.+)\/.+$
+    characterId: ^.+\/characters\/(?<characterId>[a-zA-Z0-9]+).*$
+    log: ^(?<timestamp>[0-9]{4}\-[0-9]{2}\-[0-9]{2}[\s][0-9]{2}\:[0-9]{2}\:[0-9]{2}\.[0-9]{3})[\s]+(?<level>[a-zA-Z]+)[\s]+(?<PID>[0-9]+)[\s]+[\-]{3}[\s]+\[(?<thread>[^\s\[\]]+)\][\s]+(?<class>[a-zA-Z\.]+)[\s]+\:[\s]+(?<message>.+)$
+    profile-img-url: ^(?<pre>.+\_V1\_U)(?<u>[X|Y])(?<discarded>.+)\.(?<ext>[a-zA-Z]+)$
