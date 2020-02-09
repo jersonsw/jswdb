@@ -2,13 +2,14 @@
 
 The aim of this project is to extract movies and TV Shows information from [IMDb](www.imdb.com) and store them in your own database for further queries. These information are extracted through web scraping, driven by a batch process.
 
-The project follows the principles of an [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) (aka Ports & Adapters) exposed by Alistair Cockburn. It is compound of the following modules (in this case, sub-projects):
+The project follows the principles of an [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) (aka Ports & Adapters) exposed by Alistair Cockburn. It is compound of the following modules:
 
-* [**core**](https://github.com/jersonsw/jswdb/tree/master/core) (_entities, use cases and ports_)
-* [**data-adapter**](https://github.com/jersonsw/jswdb/tree/master/data-adapter) (_adapters or implementations of the driven ports intended for persistence purposes_)
-* [**scraping-adapter**](https://github.com/jersonsw/jswdb/tree/master/scraping-adapter) (_adapters or implementations for scraping purposes_)
-* [**main**](https://github.com/jersonsw/jswdb/tree/master/main) (_The infrastructure; the root where all the above modules gets glued and where the application gets bootstrapped_)
-* [**web-ui**](https://github.com/jersonsw/jswdb/tree/master/web-ui) (_The web interface from which the batch process gets triggered and can be monitored_)
+* **domain**: _The entities or DTOs_.
+* **usecases**: _Primary and secondary ports_.
+* **data**: _Adapters or implementations of the driven ports, intended for persistence purposes_.
+* **scraping**: _adapters or implementations meant for scraping purposes_.
+* **main**: _The infrastructure; the root where all the above modules gets glued and where the application gets bootstrapped_.
+* **web-ui**: _The web interface from which the batch process gets triggered and can be monitored_.
 ![Hexagonal Architecture](https://github.com/jersonsw/jswdb/blob/master/JSWDb.png?raw=true)
 
 The following are the technologies I've used for building this project:
