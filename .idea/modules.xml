@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
-      <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-adapter/data-adapter.iml" filepath="$PROJECT_DIR$/data-adapter/data-adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/jswdb.iml" filepath="$PROJECT_DIR$/jswdb.iml" />
       <module fileurl="file://$PROJECT_DIR$/main/main.iml" filepath="$PROJECT_DIR$/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/scraping/scraping.iml" filepath="$PROJECT_DIR$/scraping/scraping.iml" />
-      <module fileurl="file://$PROJECT_DIR$/usecases/usecases.iml" filepath="$PROJECT_DIR$/usecases/usecases.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scraping-adapter/scraping-adapter.iml" filepath="$PROJECT_DIR$/scraping-adapter/scraping-adapter.iml" />
     </modules>
   </component>
 </project>

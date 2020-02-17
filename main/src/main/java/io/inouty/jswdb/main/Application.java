@@ -14,7 +14,7 @@ import java.util.TimeZone;
         "io.inouty"
 })
 @EnableJpaRepositories(basePackages = {
-        "io.inouty.jswdb.data.jpa.repositories"
+        "io.inouty.jswdb.data.jpa"
 })
 @EntityScan(basePackages = {
         "io.inouty.jswdb.data.entities"

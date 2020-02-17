@@ -200,7 +200,7 @@ VALUES (E'kr', E'South Korea'),
        (E'gd', E'Grenada'),
        (E'la', E'Laos');
 
-CREATE TABLE IF NOT EXISTS works.genres
+CREATE TABLE IF NOT EXISTS works.genreEntities
 (
     id   BIGSERIAL,
     name VARCHAR(255) NOT NULL,
@@ -209,12 +209,12 @@ CREATE TABLE IF NOT EXISTS works.genres
 )
     WITH (oids = false);
 
-ALTER TABLE works.genres
+ALTER TABLE works.genreEntities
     OWNER TO postgres;
 
 
-DELETE FROM works.genres;
-INSERT INTO works.genres (id, name)
+DELETE FROM works.genreEntities;
+INSERT INTO works.genreEntities (id, name)
 VALUES (1, E'Action'),
        (2, E'Adventure'),
        (3, E'Animation'),
@@ -279,7 +279,7 @@ CREATE TABLE IF NOT EXISTS works.directors
 ALTER TABLE works.directors
     OWNER TO postgres;
 
-CREATE TABLE IF NOT EXISTS works.genres
+CREATE TABLE IF NOT EXISTS works.genreEntities
 (
     id   BIGSERIAL,
     name VARCHAR(255) NOT NULL,
@@ -288,7 +288,7 @@ CREATE TABLE IF NOT EXISTS works.genres
 )
     WITH (oids = false);
 
-ALTER TABLE works.genres
+ALTER TABLE works.genreEntities
     OWNER TO postgres;
 
 CREATE TABLE IF NOT EXISTS works.movies
@@ -373,7 +373,7 @@ CREATE TABLE IF NOT EXISTS works.movies_genres
         ON UPDATE NO ACTION
         NOT DEFERRABLE,
     CONSTRAINT fkrs5u5iygsuht2f0cag9b9h1ob FOREIGN KEY (genre_id)
-        REFERENCES works.genres (id)
+        REFERENCES works.genreEntities (id)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE
@@ -454,7 +454,7 @@ ALTER TABLE works.directors
     ADD CONSTRAINT directors_pkey
         PRIMARY KEY (id) NOT DEFERRABLE;
 
-ALTER TABLE works.genres
+ALTER TABLE works.genreEntities
     ADD CONSTRAINT genres_pkey
         PRIMARY KEY (id) NOT DEFERRABLE;
 
@@ -487,7 +487,7 @@ ALTER TABLE works.release_info
         UNIQUE (movie_id, country_code, note, release_date) NOT DEFERRABLE;
 
 
-ALTER TABLE works.genres
+ALTER TABLE works.genreEntities
     ADD CONSTRAINT genres_uk
         UNIQUE (name) NOT DEFERRABLE;
 
