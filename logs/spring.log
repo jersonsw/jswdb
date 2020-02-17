@@ -1,151 +1,1487 @@
-2020-02-09 00:02:53.137  INFO 3684 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 3684 (D:\development\inouty\jswdb\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb\jswdb)
-2020-02-09 00:02:53.153  INFO 3684 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
-2020-02-09 00:02:53.825  INFO 3684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-02-09 00:02:53.903  INFO 3684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 2 JPA repository interfaces.
-2020-02-09 00:02:54.436  INFO 3684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-09 00:02:54.733  INFO 3684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2020-02-09 00:02:54.749  INFO 3684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-02-09 00:02:54.749  INFO 3684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-02-09 00:02:54.858  INFO 3684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-02-09 00:02:54.858  INFO 3684 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1627 ms
-2020-02-09 00:02:55.048  INFO 3684 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-02-09 00:02:55.126  INFO 3684 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
-2020-02-09 00:02:55.267  INFO 3684 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-02-09 00:02:55.392  INFO 3684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-02-09 00:02:55.548  INFO 3684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-02-09 00:02:55.611  INFO 3684 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-02-09 00:02:57.076  INFO 3684 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-02-09 00:02:57.076  INFO 3684 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-02-09 00:02:57.170  INFO 3684 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
-2020-02-09 00:02:57.654  INFO 3684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-02-09 00:02:57.654  INFO 3684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-02-09 00:02:57.795  INFO 3684 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-02-09 00:02:57.842  INFO 3684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-02-09 00:02:58.156  WARN 3684 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2020-02-09 00:02:58.156  INFO 3684 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
-2020-02-09 00:02:58.156  INFO 3684 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2020-02-09 00:02:58.234  INFO 3684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-02-09 00:02:58.234  INFO 3684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-02-09 00:02:58.234  INFO 3684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-02-09 00:02:58.265  INFO 3684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2020-02-09 00:02:58.281  INFO 3684 --- [main] io.inouty.jswdb.main.Application         : Started Application in 5.771 seconds (JVM running for 9.3)
-2020-02-09 00:03:57.845  INFO 3684 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2020-02-09 00:06:53.133  INFO 12108 --- [main] io.inouty.jswdb.main.Application         : Starting Application v1.0.0 on JersonSW with PID 12108 (D:\development\inouty\jswdb\jswdb\main\target\main-1.0.0.jar started by ingpe in D:\development\inouty\jswdb\jswdb)
-2020-02-09 00:06:53.133  INFO 12108 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
-2020-02-09 00:06:53.998  INFO 12108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-02-09 00:06:54.108  INFO 12108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91ms. Found 2 JPA repository interfaces.
-2020-02-09 00:06:54.979  INFO 12108 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-09 00:06:55.635  INFO 12108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2020-02-09 00:06:55.651  INFO 12108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-02-09 00:06:55.651  INFO 12108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-02-09 00:06:55.745  INFO 12108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-02-09 00:06:55.745  INFO 12108 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2487 ms
-2020-02-09 00:06:56.028  INFO 12108 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-02-09 00:06:56.137  INFO 12108 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
-2020-02-09 00:06:56.371  INFO 12108 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-02-09 00:06:56.512  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-02-09 00:06:56.684  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-02-09 00:06:56.715  INFO 12108 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-02-09 00:06:58.390  INFO 12108 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-02-09 00:06:58.390  INFO 12108 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-02-09 00:06:58.500  INFO 12108 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
-2020-02-09 00:06:59.486  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-02-09 00:06:59.486  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-02-09 00:06:59.720  INFO 12108 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-02-09 00:06:59.814  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-02-09 00:07:00.352  WARN 12108 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2020-02-09 00:07:00.352  INFO 12108 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
-2020-02-09 00:07:00.352  INFO 12108 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2020-02-09 00:07:00.461  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-02-09 00:07:00.461  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-02-09 00:07:00.461  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-02-09 00:07:00.493  INFO 12108 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-02-09 00:07:00.508  INFO 12108 --- [main] ConditionEvaluationReportLoggingListener : 
+2020-02-17 17:28:13.665  INFO 6340 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 6340 (D:\development\inouty\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb)
+2020-02-17 17:28:13.696  INFO 6340 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-17 17:28:14.383  INFO 6340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-17 17:28:14.461  INFO 6340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 2 JPA repository interfaces.
+2020-02-17 17:28:14.899  INFO 6340 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 17:28:15.118  INFO 6340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-17 17:28:15.133  INFO 6340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-17 17:28:15.133  INFO 6340 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-17 17:28:15.258  INFO 6340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-17 17:28:15.258  INFO 6340 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1453 ms
+2020-02-17 17:28:15.414  INFO 6340 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-17 17:28:15.477  INFO 6340 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-17 17:28:15.602  INFO 6340 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-17 17:28:15.696  INFO 6340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-17 17:28:15.805  INFO 6340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-17 17:28:15.821  INFO 6340 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-17 17:28:16.258  WARN 6340 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieActorCharacterEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieActorsCharacters
+2020-02-17 17:28:16.258  INFO 6340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-17 17:28:16.321  INFO 6340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-17 17:28:16.321  INFO 6340 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-02-17 17:28:16.336  INFO 6340 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-02-09 00:07:00.508 ERROR 12108 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2020-02-17 17:28:16.352 ERROR 6340 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-***************************
-APPLICATION FAILED TO START
-***************************
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieActorCharacterEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieActorsCharacters
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at io.inouty.jswdb.main.Application.main(Application.java:27) ~[classes/:na]
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieActorCharacterEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieActorsCharacters
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:844) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:795) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:53) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1684) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1652) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 16 common frames omitted
 
-Description:
+2020-02-17 17:31:48.209  INFO 10192 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 10192 (D:\development\inouty\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb)
+2020-02-17 17:31:48.225  INFO 10192 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-17 17:31:48.944  INFO 10192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-17 17:31:49.022  INFO 10192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 2 JPA repository interfaces.
+2020-02-17 17:31:49.568  INFO 10192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 17:31:49.850  INFO 10192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-17 17:31:49.850  INFO 10192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-17 17:31:49.850  INFO 10192 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-17 17:31:50.006  INFO 10192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-17 17:31:50.006  INFO 10192 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1703 ms
+2020-02-17 17:31:50.178  INFO 10192 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-17 17:31:50.287  INFO 10192 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-17 17:31:50.568  INFO 10192 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-17 17:31:50.772  INFO 10192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-17 17:31:50.943  INFO 10192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-17 17:31:51.022  INFO 10192 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-17 17:31:52.740  WARN 10192 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [actor_entity_id] in table [works.movies_actors_characters]
+2020-02-17 17:31:52.740  INFO 10192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-17 17:31:52.740  INFO 10192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-17 17:31:52.740  INFO 10192 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-02-17 17:31:52.756  INFO 10192 --- [main] ConditionEvaluationReportLoggingListener : 
 
-Web server failed to start. Port 8081 was already in use.
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-02-17 17:31:52.787 ERROR 10192 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-Action:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [actor_entity_id] in table [works.movies_actors_characters]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at io.inouty.jswdb.main.Application.main(Application.java:27) ~[classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [actor_entity_id] in table [works.movies_actors_characters]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [actor_entity_id] in table [works.movies_actors_characters]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:136) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:42) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:89) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:68) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1237) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 20 common frames omitted
 
-Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+2020-02-17 17:35:36.891  INFO 3724 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 3724 (D:\development\inouty\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb)
+2020-02-17 17:35:36.907  INFO 3724 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-17 17:35:37.813  INFO 3724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-17 17:35:37.907  INFO 3724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91ms. Found 2 JPA repository interfaces.
+2020-02-17 17:35:38.967  INFO 3724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 17:35:39.247  INFO 3724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-17 17:35:39.260  INFO 3724 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-17 17:35:39.261  INFO 3724 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-17 17:35:39.415  INFO 3724 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-17 17:35:39.416  INFO 3724 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2384 ms
+2020-02-17 17:35:39.594  INFO 3724 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-17 17:35:39.672  INFO 3724 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-17 17:35:39.846  INFO 3724 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-17 17:35:39.983  INFO 3724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-17 17:35:40.109  INFO 3724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-17 17:35:40.156  INFO 3724 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-17 17:35:40.771  WARN 3724 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieActorCharacterEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieActorsCharacters
+2020-02-17 17:35:40.772  INFO 3724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-17 17:35:40.793  INFO 3724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-17 17:35:40.800  INFO 3724 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-02-17 17:35:40.822  INFO 3724 --- [main] ConditionEvaluationReportLoggingListener : 
 
-2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-02-09 00:07:00.508  INFO 12108 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-02-09 00:07:00.524  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-02-09 00:07:00.524  INFO 12108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-02-09 00:07:00.524  INFO 12108 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-02-09 00:07:00.524  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-02-09 00:07:00.555  INFO 12108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-02-09 00:07:04.045  INFO 3684 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-02-09 00:07:04.061  INFO 3684 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-02-09 00:07:13.931  INFO 5072 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 5072 (D:\development\inouty\jswdb\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb\jswdb)
-2020-02-09 00:07:13.936  INFO 5072 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
-2020-02-09 00:07:14.618  INFO 5072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-02-09 00:07:14.681  INFO 5072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 2 JPA repository interfaces.
-2020-02-09 00:07:15.230  INFO 5072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-09 00:07:15.496  INFO 5072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2020-02-09 00:07:15.511  INFO 5072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-02-09 00:07:15.511  INFO 5072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-02-09 00:07:15.667  INFO 5072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-02-09 00:07:15.667  INFO 5072 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1643 ms
-2020-02-09 00:07:15.871  INFO 5072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-02-09 00:07:15.949  INFO 5072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
-2020-02-09 00:07:16.123  INFO 5072 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-02-09 00:07:16.264  INFO 5072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-02-09 00:07:16.420  INFO 5072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-02-09 00:07:16.498  INFO 5072 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-02-09 00:07:18.028  INFO 5072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-02-09 00:07:18.028  INFO 5072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-02-09 00:07:18.122  INFO 5072 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
-2020-02-09 00:07:18.637  INFO 5072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-02-09 00:07:18.653  INFO 5072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-02-09 00:07:18.778  INFO 5072 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-02-09 00:07:18.825  INFO 5072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-02-09 00:07:19.155  WARN 5072 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2020-02-09 00:07:19.155  INFO 5072 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
-2020-02-09 00:07:19.155  INFO 5072 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2020-02-09 00:07:19.234  INFO 5072 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-02-09 00:07:19.234  INFO 5072 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-02-09 00:07:19.234  INFO 5072 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-02-09 00:07:19.265  INFO 5072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2020-02-09 00:07:19.280  INFO 5072 --- [main] io.inouty.jswdb.main.Application         : Started Application in 6.44 seconds (JVM running for 8.334)
-2020-02-09 00:08:15.744  INFO 5072 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-02-09 00:08:15.745  INFO 5072 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-02-09 00:08:15.754  INFO 5072 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2020-02-09 00:08:18.835  INFO 5072 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[2 current WS(0)-HttpStream(2)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 3, completed tasks = 1]
-2020-02-09 00:08:27.494  INFO 5072 --- [clientInboundChannel-4] i.i.j.m.w.w.c.JobsWsController           : The job that runs the crawler has been launched. Current status: STARTING
-2020-02-09 00:08:27.494  INFO 5072 --- [jswdb-task-executor1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=moviesJob]] launched with the following parameters: [{startDate=946684800000, endDate=1009756800000}]
-2020-02-09 00:08:27.551  INFO 5072 --- [jswdb-task-executor1] i.i.j.m.batch.listeners.ImdbJobListener  : >>>>>>>>>>>>>>>>>>>>>>>>>> JOB STARTED
-2020-02-09 00:08:27.575  INFO 5072 --- [jswdb-task-executor1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [moviesJobStep1]
-2020-02-09 00:08:29.510  INFO 5072 --- [jswdb-task-executor3] i.i.j.scraping.MoviesSearchScraperImpl   : Reading from 1 to 100 of 8065
-2020-02-09 00:09:07.288  WARN 5072 --- [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/javascript;charset=UTF-8']
-2020-02-09 00:09:08.631  WARN 5072 --- [http-nio-8081-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'text/event-stream;charset=UTF-8']
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-02-09 00:09:27.194  INFO 5072 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-02-09 00:09:27.210  INFO 5072 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-02-17 17:35:40.842 ERROR 3724 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieActorCharacterEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieActorsCharacters
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at io.inouty.jswdb.main.Application.main(Application.java:27) ~[classes/:na]
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieActorCharacterEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieActorsCharacters
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:844) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:795) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:53) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1684) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1652) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 16 common frames omitted
+
+2020-02-17 17:40:29.071  INFO 2968 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 2968 (D:\development\inouty\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb)
+2020-02-17 17:40:29.071  INFO 2968 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-17 17:40:29.821  INFO 2968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-17 17:40:29.883  INFO 2968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 2 JPA repository interfaces.
+2020-02-17 17:40:30.676  INFO 2968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 17:40:31.039  INFO 2968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-17 17:40:31.049  INFO 2968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-17 17:40:31.050  INFO 2968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-17 17:40:31.253  INFO 2968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-17 17:40:31.254  INFO 2968 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2058 ms
+2020-02-17 17:40:31.495  INFO 2968 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-17 17:40:31.567  INFO 2968 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-17 17:40:31.739  INFO 2968 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-17 17:40:31.893  INFO 2968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-17 17:40:32.092  INFO 2968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-17 17:40:32.181  INFO 2968 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-17 17:40:32.683  WARN 2968 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieGenreEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieGenres
+2020-02-17 17:40:32.684  INFO 2968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-17 17:40:32.744  INFO 2968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-17 17:40:32.749  INFO 2968 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-02-17 17:40:32.769  INFO 2968 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-02-17 17:40:32.773 ERROR 2968 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieGenreEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieGenres
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at io.inouty.jswdb.main.Application.main(Application.java:27) ~[classes/:na]
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: io.inouty.jswdb.data.entities.MovieGenreEntity.movie in io.inouty.jswdb.data.entities.MovieEntity.movieGenres
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:844) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:795) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:53) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1684) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1652) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 16 common frames omitted
+
+2020-02-17 17:51:39.252  INFO 10132 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 10132 (D:\development\inouty\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb)
+2020-02-17 17:51:39.255  INFO 10132 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-17 17:51:39.911  INFO 10132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-17 17:51:39.973  INFO 10132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56ms. Found 2 JPA repository interfaces.
+2020-02-17 17:51:40.489  INFO 10132 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 17:51:40.723  INFO 10132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-17 17:51:40.739  INFO 10132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-17 17:51:40.739  INFO 10132 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-17 17:51:40.864  INFO 10132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-17 17:51:40.864  INFO 10132 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1516 ms
+2020-02-17 17:51:41.036  INFO 10132 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-17 17:51:41.114  INFO 10132 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-17 17:51:41.257  INFO 10132 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-17 17:51:41.414  INFO 10132 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-17 17:51:41.585  INFO 10132 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-17 17:51:41.632  INFO 10132 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-17 17:51:43.023  INFO 10132 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-17 17:51:43.039  INFO 10132 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-17 17:51:43.101  INFO 10132 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-17 17:51:43.742  INFO 10132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-02-17 17:51:43.757  INFO 10132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-02-17 17:51:43.867  INFO 10132 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-02-17 17:51:43.913  INFO 10132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-02-17 17:51:44.210  WARN 10132 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2020-02-17 17:51:44.210  INFO 10132 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-17 17:51:44.210  INFO 10132 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2020-02-17 17:51:44.273  INFO 10132 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-02-17 17:51:44.288  INFO 10132 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-17 17:51:44.288  INFO 10132 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-02-17 17:51:44.320  INFO 10132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-02-17 17:51:44.335  INFO 10132 --- [main] io.inouty.jswdb.main.Application         : Started Application in 6.019 seconds (JVM running for 7.543)
+2020-02-17 17:51:55.224  INFO 10132 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-17 17:51:55.225  INFO 10132 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-17 17:51:55.236  INFO 10132 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-02-17 17:52:16.388 ERROR 10132 --- [clientInboundChannel-1] i.i.j.m.w.w.c.JobsWsController           : A job instance with the same date range was already started.
+
+org.springframework.batch.core.repository.JobExecutionAlreadyRunningException: A job execution for this job is already running: JobExecution: id=4, version=1, startTime=2020-02-07 05:08:21.12, endTime=null, lastUpdated=2020-02-07 05:08:21.12, status=STARTED, exitStatus=exitCode=UNKNOWN;exitDescription=, job=[JobInstance: id=4, version=0, Job=[moviesJob]], jobParameters=[{endDate=1609372800000, startDate=1577836800000}]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:116) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at io.inouty.jswdb.main.web.ws.controllers.JobsWsController.runJob(JobsWsController.java:53) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-02-17 17:52:43.924  INFO 10132 --- [MessageBroker-4] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[3 current WS(0)-HttpStream(2)-HttpPoll(1), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 18], outboundChannel[pool size = 2, active threads = 0, queued tasks = 0, completed tasks = 2], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 4, completed tasks = 13]
+2020-02-17 17:52:48.838  WARN 10132 --- [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/javascript;charset=UTF-8']
+2020-02-17 17:52:52.562  WARN 10132 --- [http-nio-8081-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'text/event-stream;charset=UTF-8']
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[1 destination(s)], registry[0 sessions]]]]
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-02-17 17:54:10.147  INFO 10132 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-17 17:54:10.168  INFO 10132 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-17 17:54:10.177  INFO 10132 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-17 17:54:16.515  INFO 9592 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 9592 (D:\development\inouty\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb)
+2020-02-17 17:54:16.518  INFO 9592 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-17 17:54:17.874  INFO 9592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-17 17:54:18.040  INFO 9592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152ms. Found 2 JPA repository interfaces.
+2020-02-17 17:54:19.100  INFO 9592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 17:54:19.508  INFO 9592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-17 17:54:19.509  INFO 9592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-17 17:54:19.509  INFO 9592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-17 17:54:19.781  INFO 9592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-17 17:54:19.782  INFO 9592 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3174 ms
+2020-02-17 17:54:20.032  INFO 9592 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-17 17:54:20.150  INFO 9592 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-17 17:54:20.359  INFO 9592 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-17 17:54:20.499  INFO 9592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-17 17:54:20.632  INFO 9592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-17 17:54:20.651  INFO 9592 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-17 17:54:22.376  INFO 9592 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-17 17:54:22.385  INFO 9592 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-17 17:54:22.477  INFO 9592 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-17 17:54:23.275  INFO 9592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-02-17 17:54:23.285  INFO 9592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-02-17 17:54:23.474  INFO 9592 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-02-17 17:54:23.547  INFO 9592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-02-17 17:54:23.929  WARN 9592 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2020-02-17 17:54:23.929  INFO 9592 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-17 17:54:23.929  INFO 9592 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2020-02-17 17:54:23.976  INFO 9592 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-02-17 17:54:23.976  INFO 9592 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-17 17:54:23.976  INFO 9592 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-02-17 17:54:24.007  INFO 9592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-02-17 17:54:24.007  INFO 9592 --- [main] io.inouty.jswdb.main.Application         : Started Application in 8.648 seconds (JVM running for 10.428)
+2020-02-17 17:54:42.490  INFO 9592 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-17 17:54:42.491  INFO 9592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-17 17:54:42.500  INFO 9592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-02-17 17:55:23.545  INFO 9592 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[3 current WS(0)-HttpStream(2)-HttpPoll(1), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 15], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 3, completed tasks = 11]
+2020-02-17 17:55:36.845  WARN 9592 --- [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/javascript;charset=UTF-8']
+2020-02-17 17:55:40.136  WARN 9592 --- [http-nio-8081-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'text/event-stream;charset=UTF-8']
+2020-02-17 17:56:14.412 ERROR 9592 --- [clientInboundChannel-9] i.i.j.m.w.w.c.JobsWsController           : A job instance with the same date range was already started.
+
+org.springframework.batch.core.repository.JobExecutionAlreadyRunningException: A job execution for this job is already running: JobExecution: id=4, version=1, startTime=2020-02-07 05:08:21.12, endTime=null, lastUpdated=2020-02-07 05:08:21.12, status=STARTED, exitStatus=exitCode=UNKNOWN;exitDescription=, job=[JobInstance: id=4, version=0, Job=[moviesJob]], jobParameters=[{endDate=1609372800000, startDate=1577836800000}]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:116) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at io.inouty.jswdb.main.web.ws.controllers.JobsWsController.runJob(JobsWsController.java:53) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-02-17 17:56:34.529  INFO 9592 --- [clientInboundChannel-12] i.i.j.m.w.w.c.JobsWsController           : The job that runs the crawler has been launched. Current status: STARTING
+2020-02-17 17:56:34.529  INFO 9592 --- [jswdb-task-executor1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=moviesJob]] launched with the following parameters: [{startDate=946684800000, endDate=978220800000}]
+2020-02-17 17:56:34.558  INFO 9592 --- [jswdb-task-executor1] i.i.j.m.batch.listeners.ImdbJobListener  : >>>>>>>>>>>>>>>>>>>>>>>>>> JOB STARTED
+2020-02-17 17:56:34.575  INFO 9592 --- [jswdb-task-executor1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [moviesJobStep1]
+2020-02-17 17:56:34.694 ERROR 9592 --- [jswdb-task-executor1] o.s.batch.core.step.AbstractStep         : Encountered an error executing step moviesJobStep1 in job moviesJob
+
+java.lang.IllegalArgumentException: Unable to invoke method: [public void io.inouty.jswdb.main.batch.processors.ImdbItemsProcessor.beforeStep()] on object: [io.inouty.jswdb.main.batch.processors.ImdbItemsProcessor@a97a895] with arguments: [[StepExecution: id=6, version=1, name=moviesJobStep1, status=STARTED, exitStatus=EXECUTING, readCount=0, filterCount=0, writeCount=0 readSkipCount=0, writeSkipCount=0, processSkipCount=0, commitCount=0, rollbackCount=0, exitDescription=]]
+	at org.springframework.batch.support.SimpleMethodInvoker.invokeMethod(SimpleMethodInvoker.java:112) ~[spring-batch-infrastructure-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.batch.core.listener.MethodInvokerMethodInterceptor.invoke(MethodInvokerMethodInterceptor.java:69) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at com.sun.proxy.$Proxy116.beforeStep(Unknown Source) ~[na:na]
+	at org.springframework.batch.core.listener.CompositeStepExecutionListener.beforeStep(CompositeStepExecutionListener.java:79) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:204) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) ~[spring-batch-core-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.core.task.SimpleAsyncTaskExecutor$ConcurrencyThrottlingRunnable.run(SimpleAsyncTaskExecutor.java:275) ~[spring-core-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.batch.support.SimpleMethodInvoker.invokeMethod(SimpleMethodInvoker.java:108) ~[spring-batch-infrastructure-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	... 13 common frames omitted
+Caused by: java.lang.StackOverflowError: null
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+	at io.inouty.jswdb.data.mappers.EntityMapper.to(EntityMapper.java:16) ~[classes/:na]
+
+2020-02-17 17:56:34.694  INFO 9592 --- [jswdb-task-executor1] o.s.batch.core.step.AbstractStep         : Step: [moviesJobStep1] executed in 118ms
+2020-02-17 17:56:34.709  INFO 9592 --- [jswdb-task-executor1] i.i.j.m.batch.listeners.ImdbJobListener  : <<<<<<<<<<<<<<<<<<<<<<<<<<< JOB FINISHED with status: FAILED
+2020-02-17 17:56:34.709  INFO 9592 --- [jswdb-task-executor1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=moviesJob]] completed with the following parameters: [{startDate=946684800000, endDate=978220800000}] and the following status: [FAILED] in 157ms
+2020-02-17 18:09:56.535  INFO 7176 --- [main] io.inouty.jswdb.main.Application         : Starting Application on JersonSW with PID 7176 (D:\development\inouty\jswdb\main\target\classes started by ingpe in D:\development\inouty\jswdb)
+2020-02-17 18:09:56.535  INFO 7176 --- [main] io.inouty.jswdb.main.Application         : The following profiles are active: dev
+2020-02-17 18:09:57.238  INFO 7176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-17 18:09:57.301  INFO 7176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56ms. Found 2 JPA repository interfaces.
+2020-02-17 18:09:57.801  INFO 7176 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 18:09:58.035  INFO 7176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-02-17 18:09:58.051  INFO 7176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-17 18:09:58.051  INFO 7176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-17 18:09:58.176  INFO 7176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-17 18:09:58.176  INFO 7176 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1547 ms
+2020-02-17 18:09:58.332  INFO 7176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-17 18:09:58.395  INFO 7176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-17 18:09:58.566  INFO 7176 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-17 18:09:58.676  INFO 7176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-17 18:09:58.816  INFO 7176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-17 18:09:58.863  INFO 7176 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-02-17 18:10:00.223  INFO 7176 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-17 18:10:00.223  INFO 7176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-17 18:10:00.301  INFO 7176 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-17 18:10:00.863  INFO 7176 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-02-17 18:10:00.863  INFO 7176 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-02-17 18:10:01.004  INFO 7176 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-02-17 18:10:01.035  INFO 7176 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-02-17 18:10:01.316  WARN 7176 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2020-02-17 18:10:01.316  INFO 7176 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: POSTGRES
+2020-02-17 18:10:01.316  INFO 7176 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2020-02-17 18:10:01.379  INFO 7176 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-02-17 18:10:01.379  INFO 7176 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-02-17 18:10:01.379  INFO 7176 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-02-17 18:10:01.410  INFO 7176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-02-17 18:10:01.410  INFO 7176 --- [main] io.inouty.jswdb.main.Application         : Started Application in 5.805 seconds (JVM running for 7.458)
+2020-02-17 18:10:14.646  INFO 7176 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-17 18:10:14.646  INFO 7176 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-17 18:10:14.646  INFO 7176 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2020-02-17 18:10:41.766  INFO 7176 --- [clientInboundChannel-4] i.i.j.m.w.w.c.JobsWsController           : The job that runs the crawler has been launched. Current status: STARTING
+2020-02-17 18:10:41.767  INFO 7176 --- [jswdb-task-executor1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=moviesJob]] launched with the following parameters: [{startDate=946684800000, endDate=978220800000}]
+2020-02-17 18:10:41.813  INFO 7176 --- [jswdb-task-executor1] i.i.j.m.batch.listeners.ImdbJobListener  : >>>>>>>>>>>>>>>>>>>>>>>>>> JOB STARTED
+2020-02-17 18:10:41.834  INFO 7176 --- [jswdb-task-executor1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [moviesJobStep1]
+2020-02-17 18:10:43.371  INFO 7176 --- [jswdb-task-executor4] i.i.j.s.a.MoviesSearchScraperAdapter     : Reading from 1 to 100 of 3917
+2020-02-17 18:11:01.044  INFO 7176 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[3 current WS(0)-HttpStream(2)-HttpPoll(1), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 18], outboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 36], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 4, completed tasks = 11]
+2020-02-17 18:11:08.311  WARN 7176 --- [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/javascript;charset=UTF-8']
+2020-02-17 18:11:12.123  WARN 7176 --- [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'text/event-stream;charset=UTF-8']
+2020-02-17 18:12:17.080  INFO 7176 --- [jswdb-task-executor102] i.i.j.s.a.MoviesSearchScraperAdapter     : Reading from 101 to 200 of 3917
+2020-02-17 18:14:07.850  INFO 7176 --- [jswdb-task-executor202] i.i.j.s.a.MoviesSearchScraperAdapter     : Reading from 201 to 300 of 3917
+2020-02-17 18:15:55.159  INFO 7176 --- [jswdb-task-executor302] i.i.j.s.a.MoviesSearchScraperAdapter     : Reading from 301 to 400 of 3917
+2020-02-17 18:17:44.685  INFO 7176 --- [jswdb-task-executor402] i.i.j.s.a.MoviesSearchScraperAdapter     : Reading from 401 to 500 of 3917
+2020-02-17 18:18:28.890  INFO 7176 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-02-17 18:18:28.891  INFO 7176 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[3 destination(s)], registry[0 sessions]]]]
+2020-02-17 18:18:28.891  INFO 7176 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-02-17 18:18:28.894  INFO 7176 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-02-17 18:18:28.895  INFO 7176 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-02-17 18:18:28.897  INFO 7176 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-02-17 18:18:28.898  INFO 7176 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-02-17 18:18:28.898  INFO 7176 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-17 18:18:28.905  INFO 7176 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-17 18:18:28.915  INFO 7176 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

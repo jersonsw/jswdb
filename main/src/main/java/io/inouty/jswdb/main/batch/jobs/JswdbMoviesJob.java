@@ -1,6 +1,6 @@
 package io.inouty.jswdb.main.batch.jobs;
 
-import io.inouty.jswdb.domain.movie.MovieDto;
+import io.inouty.jswdb.core.domain.movie.Movie;
 import io.inouty.jswdb.main.batch.configs.ItemSkipPolicy;
 import io.inouty.jswdb.main.batch.listeners.ImdbJobListener;
 import io.inouty.jswdb.main.batch.listeners.MovieWriterListener;
@@ -61,7 +61,7 @@ public class JswdbMoviesJob {
     @Bean()
     public Step step1() {
         return stepBuilderFactory.get("moviesJobStep1")
-                .<String, MovieDto>chunk(1)
+                .<String, Movie>chunk(1)
                 .reader(imdbItemsReader)
                 .processor(imdbItemsProcessor)
                 .faultTolerant()
@@ -69,7 +69,7 @@ public class JswdbMoviesJob {
                 .skipPolicy(itemSkipPolicy)
                 .writer(imdbMovieWriter)
                 .listener(movieWriterListener)
-                .allowStartIfComplete(true)
+                .allowStartIfComplete(false)
                 .taskExecutor(taskExecutor)
                 .build();
     }

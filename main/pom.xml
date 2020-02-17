@@ -14,11 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>io.inouty.jswdb</groupId>
-            <artifactId>domain</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.inouty.jswdb</groupId>
-            <artifactId>usecases</artifactId>
+            <artifactId>core</artifactId>
         </dependency>
         <dependency>
             <groupId>io.inouty.jswdb</groupId>

@@ -17,10 +17,9 @@
     </parent>
 
     <modules>
-        <module>domain</module>
-        <module>usecases</module>
-        <module>scraping</module>
-        <module>data</module>
+        <module>core</module>
+        <module>data-adapter</module>
+        <module>scraping-adapter</module>
         <module>main</module>
     </modules>
 
@@ -46,12 +45,7 @@
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>domain</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>usecases</artifactId>
+                <artifactId>core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
