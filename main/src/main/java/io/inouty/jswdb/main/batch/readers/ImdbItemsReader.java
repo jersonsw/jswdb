@@ -58,7 +58,7 @@ public class ImdbItemsReader implements ItemReader<String> {
             }
             throw new IllegalArgumentException(errorMsg);
         }
-        Long pageSize = parameters.getLong("pageSize");
+        final Long pageSize = parameters.getLong("pageSize");
         if (pageSize != null) {
             if (LOGGER.isInfoEnabled() && pageSize != searchPageSize) {
                 LOGGER.info("The fetch page size will be changed from its default value({}) to a new one {}", searchPageSize, pageSize);

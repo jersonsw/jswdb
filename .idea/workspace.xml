@@ -75,7 +75,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/src/test/java/io/inouty/jswdb/core/usecases" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -103,11 +103,11 @@
       <recent name="io.inouty.jswdb" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\inouty\jswdb\core\src\test\java\io\inouty\jswdb\core\usecases" />
       <recent name="D:\development\inouty\jswdb\main\usecases\src\main\java\io\inouty\jswdb\usecases" />
       <recent name="D:\development\inouty\jswdb\main\scraping\src\main\java\io\inouty\jswdb\scraping" />
       <recent name="D:\development\inouty\jswdb\main\domain\src\main\java\io\inouty\jswdb\domain" />
       <recent name="D:\development\inouty\jswdb\main\data\src\main\java\io\inouty\jswdb\data" />
-      <recent name="D:\development\inouty\jswdb\main\src\test\resources\db\migration" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.inouty.abp.listeners" />
@@ -129,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JSWDb">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.inouty.jswdb.Test" />
       <module name="jswdb" />
@@ -309,6 +309,8 @@
       <workItem from="1581821321468" duration="2022000" />
       <workItem from="1581879295374" duration="12379000" />
       <workItem from="1581958661179" duration="15662000" />
+      <workItem from="1581980814055" duration="3556000" />
+      <workItem from="1582045974399" duration="7902000" />
     </task>
     <servers />
   </component>
