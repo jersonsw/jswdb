@@ -4,11 +4,10 @@ The aim of this project is to extract movies and TV Shows information from [IMDb
 
 The project follows the principles of an [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) (aka Ports & Adapters) exposed by Alistair Cockburn. It is compound of the following modules:
 
-* **domain**: _The entities or DTOs_.
-* **usecases**: _Primary and secondary ports_.
-* **data**: _Adapters or implementations of the driven ports, intended for persistence purposes_.
-* **scraping**: _adapters or implementations meant for scraping purposes_.
-* **main**: _The infrastructure; the root where all the above modules gets glued and where the application gets bootstrapped_.
+* **core**: _Domain + Ports + Usecases_.
+* **data-adapter**: _Adapters intended for persistence purposes_.
+* **scraping-adapter**: _Adapters meant for scraping purposes_.
+* **main**: _The infrastructure; the root where all the above modules gets glued and the application gets bootstrapped_.
 * **web-ui**: _The web interface from which the batch process gets triggered and can be monitored_.
 ![Hexagonal Architecture](https://github.com/jersonsw/jswdb/blob/master/JSWDb.png?raw=true)
 
