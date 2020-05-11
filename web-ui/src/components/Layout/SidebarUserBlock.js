@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Collapse } from 'reactstrap';
+import {Collapse} from 'reactstrap';
 
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 class SidebarUserBlock extends Component {
 

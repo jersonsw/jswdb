@@ -1,4 +1,4 @@
-import { CHANGE_THEME } from '../actions/actions';
+import {CHANGE_THEME} from '../actions/actions';
 
 const LINK_ID = 'theme-stylesheet';
 

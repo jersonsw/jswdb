@@ -1,7 +1,7 @@
 import React from 'react';
-import { withNamespaces, Trans } from 'react-i18next';
+import {Trans, withNamespaces} from 'react-i18next';
 import ContentWrapper from '../Layout/ContentWrapper';
-import { Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row} from 'reactstrap';
 
 class SingleView extends React.Component {
 

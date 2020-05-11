@@ -173,11 +173,11 @@ public final class Movie implements Serializable {
         private Double ratingAvg;
         private Long ratingCount;
         private Integer metaScore;
-        private Set<MovieGenre> moviesGenres = new HashSet<>();
-        private Set<ReleaseInfo> releaseInfo = new HashSet<>();
-        private Set<MovieWriter> movieWriters = new HashSet<>();
-        private Set<MovieDirector> moviesDirectors = new HashSet<>();
-        private Set<MovieActorCharacter> movieActorsCharacters = new HashSet<>();
+        private Set<MovieGenre> moviesGenres = new HashSet<MovieGenre>();
+        private Set<ReleaseInfo> releaseInfo = new HashSet<ReleaseInfo>();
+        private Set<MovieWriter> movieWriters = new HashSet<MovieWriter>();
+        private Set<MovieDirector> moviesDirectors = new HashSet<MovieDirector>();
+        private Set<MovieActorCharacter> movieActorsCharacters = new HashSet<MovieActorCharacter>();
 
         private Builder() {
         }

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as actions from '../../store/actions/actions';
 
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+import {Nav, NavItem, NavLink, TabContent, TabPane} from 'reactstrap';
 
 class Offsidebar extends Component {
 

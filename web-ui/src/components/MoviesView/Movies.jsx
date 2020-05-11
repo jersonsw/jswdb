@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as SockJS from 'sockjs-client/dist/sockjs.min';
 import * as moment from 'moment';
+import MoviesHeader from "./MoviesHeader";
 
 let stompClient = null;
 
@@ -26,11 +27,15 @@ class Movies extends React.Component {
             connected: false,
             connecting: false,
             job: {
-                status: null
+                stopping: false,
+                running: false,
+                stopped: true
             },
             progress: {
                 recordsCount: null,
-                recordsWritten: null
+                recordsWritten: null,
+                startTime: null,
+                endTime: null
             }
         };
 
@@ -39,6 +44,7 @@ class Movies extends React.Component {
         this.updateMovies = this.updateMovies.bind(this);
         this.updateEvents = this.updateEvents.bind(this);
         this.runCrawler = this.runCrawler.bind(this);
+        this.stopCrawler = this.stopCrawler.bind(this);
         this.reconnect = this.reconnect.bind(this);
         this.disconnect = this.disconnect.bind(this);
         this.reconnectOrDisconnect = this.reconnectOrDisconnect.bind(this);
@@ -49,27 +55,42 @@ class Movies extends React.Component {
     runCrawler(event) {
         event.preventDefault();
         this.resetValues();
-        const {movies: [], dateRange: {start: startDate, end: endDate}} = this.state;
+        const {dateRange: {start: startDate, end: endDate}} = this.state;
         stompClient.send('/app/jobs/run', {}, JSON.stringify({
             startDate: moment(startDate).format('YYYY-MM-DD'),
             endDate: moment(endDate).format('YYYY-MM-DD')
         }));
     }
 
+    stopCrawler(event) {
+        console.log('Stopping crawler.....');
+        this.setState({
+            job: {
+                running: true,
+                stopping: true,
+                stopped: false
+            }
+        });
+        event.preventDefault();
+        stompClient.send('/app/jobs/stop', {})
+    }
+
     componentDidMount() {
-        if (stompClient) {
+        if (stompClient && stompClient.connected) {
             stompClient.disconnect();
             stompClient = null;
         }
         this.connect();
     }
 
-    resetValues(){
+    resetValues() {
         this.setState({
             movies: [],
             progress: {
                 recordsCount: null,
-                recordsWritten: null
+                recordsWritten: null,
+                startTime: null,
+                endTime: null
             },
             event: {
                 status: null,
@@ -100,8 +121,14 @@ class Movies extends React.Component {
         if (stompClient) {
             stompClient.disconnect();
             stompClient = null;
+            console.log('Disconnected');
         }
         this.setState({
+            job: {
+                stopping: false,
+                running: false,
+                stopped: true
+            },
             event: {status: null, message: 'The connection with the server has been loosed'},
             connected: false,
             connecting: false
@@ -118,9 +145,6 @@ class Movies extends React.Component {
     }
 
     onConnected(resp) {
-        if (stompClient.ws._transport.url) {
-            console.log('Transport URL:', stompClient.ws._transport.url);
-        }
         this.setState({
             connecting: false,
             connected: true,
@@ -135,19 +159,38 @@ class Movies extends React.Component {
     }
 
     updateProgress(response) {
+        console.log('Update progress...')
         if (response.body) {
+            const {job: {stopping, stopped}} = this.state;
             this.setState({
+                job: {running: !stopping, stopping: stopping, stopped: stopped},
                 progress: JSON.parse(response.body)
             });
         }
     }
 
     updateEvents(response) {
+        console.log('Update event...')
         const event = JSON.parse(response.body);
-        this.setState({event: event});
+        let {job: {running, stopping}} = this.state;
+        if(!stopping){
+            running = (event.status !== 'JOB_STOPPED')
+        }
+        const stopped =(stopping && event.status === 'JOB_STOPPED')
+        this.setState({
+            event: event,
+            job: {
+                running: running,
+                stopping: stopping,
+                stopped: stopped
+            }
+        });
     }
 
     updateMovies(response) {
+        console.log('Update movies...')
+        const {job: {stopping, stopped}} = this.state;
+        this.setState({job: {running: !stopping, stopping: stopping, stopped: stopped}});
         const newMovies = JSON.parse(response.body);
         if (newMovies && newMovies.length > 0) {
             const {movies} = this.state;
@@ -162,8 +205,12 @@ class Movies extends React.Component {
     }
 
     onError(err) {
-        console.log(err);
         this.setState({
+                job: {
+                    running: false,
+                    stopping: false,
+                    stopped: true
+                },
                 event: {status: null, message: 'The connection with the server has been loosed'},
                 connected: false,
                 connecting: false
@@ -172,34 +219,20 @@ class Movies extends React.Component {
     }
 
     render() {
-        const {movies, connected, connecting, dateRange, job, event, progress} = this.state;
-        const recordsLeft = progress.recordsCount - progress.recordsWritten;
-        const startTime = moment(progress.startTime);
-        const endTime = moment(progress.endTime);
+        const {movies, connected, connecting, dateRange, job, event, progress: {recordsCount, recordsWritten, startTime: st, endTime: et}} = this.state;
+        const startTime = moment(st);
+        const endTime = moment(et);
+        const recordsLeft = recordsCount - recordsWritten;
         const duration = moment.duration(endTime.diff(startTime));
         const elapsedTime = duration.asSeconds().toFixed(0);
         const elapsedStr = parseInt(elapsedTime / 3600) + 'h ' + parseInt((elapsedTime % 3600) / 60) + 'm ' + (parseInt((elapsedTime % 3600) % 60)) + 's';
-        const secondsPerRecord = parseInt(elapsedTime / progress.recordsWritten);
+        const secondsPerRecord = parseInt(elapsedTime / recordsWritten);
         const timeLeftSeconds = secondsPerRecord * recordsLeft;
         const timeLeftStr = parseInt(timeLeftSeconds / 3600) + 'h ' + parseInt((timeLeftSeconds % 3600) / 60) + 'm ' + (parseInt((timeLeftSeconds % 3600) % 60)) + 's';
 
         return (
             <ContentWrapper>
-                <div className="content-heading">
-                    Movies
-                    <div className={'ml-auto'}>
-                        <span
-                            className={'badge badge-' + (connecting ? 'warning' : (connected ? 'success' : 'danger'))}>
-                            {connecting ? 'Connecting...' : connected ? 'Connected' : 'Disconnected'}
-                        </span>
-                        {!connecting &&
-                        <Button onClick={() => this.reconnectOrDisconnect(!connected)} className={'ml-5'}
-                                size={'xs'} color={'secondary'}>
-                            {connected && <i className="fa fa-sign-out-alt text-danger"></i>}
-                            {!connected && <i className="fa fa-plug text-success"></i>}
-                        </Button>}
-                    </div>
-                </div>
+                <MoviesHeader toggleConnection={this.reconnectOrDisconnect} connected={connected} connecting={connecting} />
                 <Row>
                     <Col>
                         <Form>
@@ -251,9 +284,12 @@ class Movies extends React.Component {
                                     </FormGroup>
                                 </Col>
                                 <Col lg={2}>
-                                    <Button disabled={!connected || connecting || job.status === 'JOB_RUNNING'}
-                                            color={'success'}
-                                            onClick={this.runCrawler}>Run Crawler</Button>
+                                    {console.log('Running - Stopping:', job.running, job.stopping)}
+                                    {(!job.running && !job.stopping || job.stopped) && <Button disabled={!connected || connecting}
+                                                             color={'success'}
+                                                             onClick={this.runCrawler}>Run Crawler</Button>}
+                                    {(job.running || job.stopping) && !job.stopped && <Button color={'danger'}
+                                                            onClick={this.stopCrawler}>{job.stopping?'Stopping...':'Stop Crawler'}</Button>}
                                 </Col>
                                 <Col>
                                     {event.message}
@@ -265,8 +301,8 @@ class Movies extends React.Component {
                 <Row>
                     <Col>
                         <div>
-                            {progress.recordsCount && progress.recordsWritten && <h4 className={'mt-2 mb-2'}>
-                                {progress.recordsWritten.toLocaleString()} / {progress.recordsCount.toLocaleString()} ({parseFloat((progress.recordsWritten / progress.recordsCount) * 100).toFixed(2)}%)
+                            {recordsCount && recordsWritten && <h4 className={'mt-2 mb-2'}>
+                                {`${recordsWritten.toLocaleString()} of ${recordsCount.toLocaleString()} titles loaded (${parseFloat((recordsWritten / recordsCount) * 100).toFixed(2)}%)`}
                                 <span className={'text-muted mr-3 ml-3'}>|</span> Elapsed: <span
                                 className={'text-info'}>{elapsedStr}</span><span
                                 className={'text-muted mr-3 ml-3'}>|</span>Left: <span
@@ -275,9 +311,9 @@ class Movies extends React.Component {
                                     <div
                                         className={"progress-bar progress-bar-striped progress-bar-animated bg-" + (connected ? 'success' : (connecting ? 'warning' : 'danger'))}
                                         role="progressbar"
-                                        style={{width: (+progress.recordsWritten / +progress.recordsCount) * 100 + '%'}}>
+                                        style={{width: (+recordsWritten / +recordsCount) * 100 + '%'}}>
                                     <span
-                                        className="sr-only">{((progress.recordsWritten / progress.recordsCount) * 100).toString()}</span>
+                                        className="sr-only">{((recordsWritten / recordsCount) * 100).toString()}</span>
                                     </div>
                                 </div>
                             </h4>
@@ -298,21 +334,26 @@ class Movies extends React.Component {
                             {
                                 movies && movies.length > 0 && movies.map(m =>
                                     <tr key={m.id}>
-                                        <td>{m.profileImg &&
-                                        <img src={m.profileImg + '._V1_UX20_CR,0,20,20_AL_.jpg'} alt={m.title}/>}</td>
-                                        <td>{m.title}</td>
+                                        <td style={{width: '120px'}}><img
+                                            src={!!m.profileImg ? (m.profileImg + '._V1_UX100_CR,0,100,100_AL_.jpg') : 'https://via.placeholder.com/100'}
+                                            alt={m.title}/></td>
+                                        <td style={{width: '300px'}}>
+                                            <p className={'text-bold'}>{m.title}</p>
+                                            <p>{m.summary}</p>
+                                        </td>
                                         <td>{m.year}</td>
                                         <td className={'text-center'}>
-                                            {m.ratingAvg.toLocaleString()}
-                                            <div className="progress progress-xs">
+                                            {!!m.ratingAvg ? m.ratingAvg.toLocaleString() : ''}
+                                            {!!m.ratingAvg && <div className="progress progress-xs">
                                                 <div className={"progress-bar progress-bar bg-" +
-                                                (m.ratingAvg >= 8 ? 'success' : (m.ratingAvg >= 7.5 ? 'warning' : 'danger'))}
+                                                (!!m.ratingAvg && m.ratingAvg >= 8 ? 'success' : (m.ratingAvg >= 7.5 ? 'warning' : 'danger'))}
                                                      role="progressbar" style={{width: (m.ratingAvg * 10) + '%'}}>
                                                     <span className="sr-only">{m.ratingAvg}</span>
                                                 </div>
-                                            </div>
+                                            </div>}
+                                            {!m.ratingAvg && 'Without rating'}
                                         </td>
-                                        <td>{m.ratingCount.toLocaleString()}</td>
+                                        <td>{!!m.ratingCount ? m.ratingCount.toLocaleString() : ''}</td>
                                         <td>{m.metaScore}</td>
                                     </tr>
                                 )

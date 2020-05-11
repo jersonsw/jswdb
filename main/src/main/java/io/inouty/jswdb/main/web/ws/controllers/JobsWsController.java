@@ -1,8 +1,8 @@
 package io.inouty.jswdb.main.web.ws.controllers;
 
-import io.inouty.jswdb.main.dtos.Request;
 import io.inouty.jswdb.main.dtos.Event;
 import io.inouty.jswdb.main.dtos.EventStatus;
+import io.inouty.jswdb.main.dtos.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.*;

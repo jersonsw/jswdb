@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import $ from '../Common/wrapper.js';
 
 import HeaderHorizontal from './HeaderHorizontal'

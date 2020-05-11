@@ -6,46 +6,25 @@ CREATE SCHEMA IF NOT EXISTS batch;
 
 -- SEQUENCES
 
-CREATE SEQUENCE IF NOT EXISTS works.characters_id_seq
-    INCREMENT 1 MINVALUE 1
-    MAXVALUE 9223372036854775807 START 1
-    CACHE 1;
-
-CREATE SEQUENCE IF NOT EXISTS works.genres_id_seq
-    INCREMENT 1 MINVALUE 1
-    MAXVALUE 9223372036854775807 START 1
-    CACHE 1;
-
-CREATE SEQUENCE IF NOT EXISTS works.release_info_id_seq
-    INCREMENT 1 MINVALUE 1
-    MAXVALUE 9223372036854775807 START 1
-    CACHE 1;
-
+CREATE SEQUENCE IF NOT EXISTS works.characters_id_seq;
+CREATE SEQUENCE IF NOT EXISTS works.genres_id_seq;
+CREATE SEQUENCE IF NOT EXISTS works.release_info_id_seq;
+CREATE SEQUENCE IF NOT EXISTS hibernate_sequence;
 
 -- TABLES
-
 CREATE TABLE IF NOT EXISTS works.actors
 (
     id        VARCHAR(20) NOT NULL,
     full_name VARCHAR(60) NOT NULL,
     CONSTRAINT actors_pkey PRIMARY KEY (id)
-)
-    WITH (oids = false);
-
-ALTER TABLE works.actors
-    OWNER TO postgres;
+);
 
 CREATE TABLE IF NOT EXISTS works.writers
 (
     id        VARCHAR(20) NOT NULL,
     full_name VARCHAR(60) NOT NULL,
     CONSTRAINT writers_pkey PRIMARY KEY (id)
-)
-    WITH (oids = false);
-
-ALTER TABLE works.writers
-    OWNER TO postgres;
-
+);
 
 CREATE TABLE IF NOT EXISTS public.countries
 (
@@ -53,12 +32,7 @@ CREATE TABLE IF NOT EXISTS public.countries
     name VARCHAR(30) NOT NULL,
     CONSTRAINT countries_name_key UNIQUE (name),
     CONSTRAINT countries_pkey PRIMARY KEY (code)
-)
-    WITH (oids = false);
-
-ALTER TABLE public.countries
-    OWNER TO postgres;
-
+);
 
 /* Data for the 'works.countries' table  (Records 1 - 136) */
 DELETE FROM public.countries;
@@ -200,21 +174,18 @@ VALUES (E'kr', E'South Korea'),
        (E'gd', E'Grenada'),
        (E'la', E'Laos');
 
-CREATE TABLE IF NOT EXISTS works.genreEntities
+CREATE TABLE IF NOT EXISTS works.genres
 (
     id   BIGSERIAL,
     name VARCHAR(255) NOT NULL,
     CONSTRAINT genres_pkey PRIMARY KEY (id),
     CONSTRAINT genres_uk UNIQUE (name)
-)
-    WITH (oids = false);
+);
 
-ALTER TABLE works.genreEntities
-    OWNER TO postgres;
+DELETE
+  FROM works.genres;
 
-
-DELETE FROM works.genreEntities;
-INSERT INTO works.genreEntities (id, name)
+INSERT INTO works.genres (id, name)
 VALUES (1, E'Action'),
        (2, E'Adventure'),
        (3, E'Animation'),
@@ -249,8 +220,8 @@ CREATE TABLE IF NOT EXISTS works.characters
     name    VARCHAR(120) NOT NULL,
     CONSTRAINT characters_pkey PRIMARY KEY (id),
     CONSTRAINT characters_uk UNIQUE (imdb_id, name)
-)
-    WITH (oids = false);
+);
+
 
 ALTER TABLE works.characters
     OWNER TO postgres;
@@ -262,8 +233,8 @@ CREATE TABLE IF NOT EXISTS works.countries
     name VARCHAR(30) NOT NULL,
     CONSTRAINT countries_name_key UNIQUE (name),
     CONSTRAINT countries_pkey PRIMARY KEY (code)
-)
-    WITH (oids = false);
+);
+
 
 ALTER TABLE works.countries
     OWNER TO postgres;
@@ -273,23 +244,19 @@ CREATE TABLE IF NOT EXISTS works.directors
     id        VARCHAR(20) NOT NULL,
     full_name VARCHAR(60) NOT NULL,
     CONSTRAINT directors_pkey PRIMARY KEY (id)
-)
-    WITH (oids = false);
+);
+
 
 ALTER TABLE works.directors
     OWNER TO postgres;
 
-CREATE TABLE IF NOT EXISTS works.genreEntities
+CREATE TABLE IF NOT EXISTS works.genres
 (
     id   BIGSERIAL,
     name VARCHAR(255) NOT NULL,
     CONSTRAINT genres_pkey PRIMARY KEY (id),
     CONSTRAINT uk_pe1a9woik1k97l87cieguyhh4 UNIQUE (name)
-)
-    WITH (oids = false);
-
-ALTER TABLE works.genreEntities
-    OWNER TO postgres;
+);
 
 CREATE TABLE IF NOT EXISTS works.movies
 (
@@ -305,12 +272,7 @@ CREATE TABLE IF NOT EXISTS works.movies
     trailer_url  VARCHAR(255),
     year         INTEGER,
     CONSTRAINT movies_pkey PRIMARY KEY (id)
-)
-    WITH (oids = false);
-
-ALTER TABLE works.movies
-    OWNER TO postgres;
-
+);
 
 CREATE TABLE IF NOT EXISTS works.movies_actors_characters
 (
@@ -333,11 +295,7 @@ CREATE TABLE IF NOT EXISTS works.movies_actors_characters
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE
-)
-    WITH (oids = false);
-
-ALTER TABLE works.movies_actors_characters
-    OWNER TO postgres;
+);
 
 
 CREATE TABLE IF NOT EXISTS works.movies_directors
@@ -355,12 +313,7 @@ CREATE TABLE IF NOT EXISTS works.movies_directors
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE
-)
-    WITH (oids = false);
-
-ALTER TABLE works.movies_directors
-    OWNER TO postgres;
-
+);
 
 CREATE TABLE IF NOT EXISTS works.movies_genres
 (
@@ -373,16 +326,11 @@ CREATE TABLE IF NOT EXISTS works.movies_genres
         ON UPDATE NO ACTION
         NOT DEFERRABLE,
     CONSTRAINT fkrs5u5iygsuht2f0cag9b9h1ob FOREIGN KEY (genre_id)
-        REFERENCES works.genreEntities (id)
+        REFERENCES works.genres (id)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE
-)
-    WITH (oids = false);
-
-ALTER TABLE works.movies_genres
-    OWNER TO postgres;
-
+);
 
 CREATE TABLE IF NOT EXISTS works.movies_writers
 (
@@ -400,12 +348,7 @@ CREATE TABLE IF NOT EXISTS works.movies_writers
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE
-)
-    WITH (oids = false);
-
-ALTER TABLE works.movies_writers
-    OWNER TO postgres;
-
+);
 
 CREATE TABLE IF NOT EXISTS works.release_info
 (
@@ -422,11 +365,7 @@ CREATE TABLE IF NOT EXISTS works.release_info
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE
-)
-    WITH (oids = false);
-
-ALTER TABLE works.release_info
-    OWNER TO postgres;
+);
 
 -- INDICES
 
@@ -454,7 +393,7 @@ ALTER TABLE works.directors
     ADD CONSTRAINT directors_pkey
         PRIMARY KEY (id) NOT DEFERRABLE;
 
-ALTER TABLE works.genreEntities
+ALTER TABLE works.genres
     ADD CONSTRAINT genres_pkey
         PRIMARY KEY (id) NOT DEFERRABLE;
 
@@ -487,7 +426,7 @@ ALTER TABLE works.release_info
         UNIQUE (movie_id, country_code, note, release_date) NOT DEFERRABLE;
 
 
-ALTER TABLE works.genreEntities
+ALTER TABLE works.genres
     ADD CONSTRAINT genres_uk
         UNIQUE (name) NOT DEFERRABLE;
 

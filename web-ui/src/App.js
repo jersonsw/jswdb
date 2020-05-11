@@ -1,16 +1,5 @@
-/*!
- *
- * Angle - Bootstrap Admin Template
- *
- * Version: 4.5
- * Author: @themicon_co
- * Website: http://themicon.co
- * License: https://wrapbootstrap.com/help/licenses
- *
- */
-
-import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, {Component} from 'react';
+import {BrowserRouter} from 'react-router-dom';
 // App Routes
 import Routes from './Routes';
 // Vendor dependencies

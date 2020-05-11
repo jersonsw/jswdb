@@ -7,9 +7,9 @@
         <artifactId>jswdb</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>data</artifactId>
+    <artifactId>data-adapter</artifactId>
     <version>1.0.0</version>
-    <name>data</name>
+    <name>data-adapter</name>
     <description>JSWDb Data Adapter</description>
     <dependencies>
         <dependency>

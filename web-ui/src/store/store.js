@@ -1,10 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import reducers from './reducers/reducers';
 import middlewares from './middlewares/middlewares'
 
-import { updateTheme } from './middlewares/themes.middleware.js';
+import {updateTheme} from './middlewares/themes.middleware.js';
 
-import { persistedState, saveState } from './persisted.store.js';
+import {persistedState, saveState} from './persisted.store.js';
 
 export default function configureStore() {
 

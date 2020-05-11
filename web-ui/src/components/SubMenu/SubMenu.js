@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ContentWrapper from '../Layout/ContentWrapper';
-import { Row, Col } from 'reactstrap';
+import {Col, Row} from 'reactstrap';
 
 class SubMenu extends Component {
 

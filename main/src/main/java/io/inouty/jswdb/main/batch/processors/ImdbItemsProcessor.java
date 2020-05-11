@@ -12,7 +12,10 @@ import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 @Component
@@ -20,7 +23,7 @@ public class ImdbItemsProcessor implements ItemProcessor<String, Movie> {
 
     private final FindGenresPort findGenresPort;
 
-    private Set<Genre> genres = new HashSet<>();
+    private Set<Genre> genres = new HashSet<Genre>();
 
     @Value("${imdb.urls.item-details}")
     private String movieUrlTemplate;
@@ -39,10 +42,10 @@ public class ImdbItemsProcessor implements ItemProcessor<String, Movie> {
     @BeforeStep()
     public void beforeStep() {
         this.genres = this.findGenresPort.findAll();
-        this.urlsTemplates = new HashMap<>() {{
+        this.urlsTemplates = new HashMap<String,String>() {{
             put("movieUrlTemplate", movieUrlTemplate);
         }};
-        this.patterns = new HashMap<>() {{
+        this.patterns = new HashMap<String, Pattern>() {{
             put("durationPattern", durationPattern);
         }};
     }

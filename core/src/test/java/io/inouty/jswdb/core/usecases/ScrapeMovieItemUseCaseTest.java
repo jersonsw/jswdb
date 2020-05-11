@@ -2,17 +2,14 @@ package io.inouty.jswdb.core.usecases;
 
 import io.inouty.jswdb.core.domain.movie.Genre;
 import io.inouty.jswdb.core.domain.movie.Movie;
-import io.inouty.jswdb.core.exceptions.GenreNotFoundException;
 import io.inouty.jswdb.core.ports.input.ScrapeMovieItemPort;
 import io.inouty.jswdb.core.ports.output.MovieItemScraperPort;
 import io.inouty.jswdb.core.ports.usecases.ScrapeMovieItemUseCase;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Time;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -54,7 +51,7 @@ public class ScrapeMovieItemUseCaseTest {
                 .withSummary("After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.")
                 .withTrailerUrl("/video/imdb/vi2163260441?playlistId=tt4154796&ref_=tt_ov_vi")
                 .build();
-        genres = new HashSet<>() {{
+        genres = new HashSet<Genre>() {{
             add(createGenre(1L, "Adventure"));
             add(createGenre(2L, "Sci-Fi"));
             add(createGenre(3L, "Action"));
@@ -78,11 +75,6 @@ public class ScrapeMovieItemUseCaseTest {
         assertThat(result, containsInAnyOrder(genres.toArray()));
     }
 
-    @Test()
-    public void executeShouldThrowNoMovieGenresFoundException() {
-        when(movieItemScraperPort.extractGenres(anySet())).thenReturn(Collections.emptySet());
-        Assertions.assertThrows(GenreNotFoundException.class, () -> scrapeMovieItemPort.extractGenres(anySet()));
-    }
 
     @Test
     void execute() {

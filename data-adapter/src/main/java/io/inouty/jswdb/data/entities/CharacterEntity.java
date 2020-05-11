@@ -2,13 +2,13 @@ package io.inouty.jswdb.data.entities;
 
 import io.inouty.jswdb.core.domain.movie.Character;
 import io.inouty.jswdb.data.mappers.EntityMapper;
-import io.inouty.jswdb.data.mappers.Mapeable;
+import io.inouty.jswdb.data.mappers.Mappable;
 
 import javax.persistence.*;
 
 @Entity(name = "character")
 @Table(schema = "works", name = "characters", uniqueConstraints = @UniqueConstraint(name = "characters_uk", columnNames = {"imdb_id", "name"}))
-public class CharacterEntity implements Mapeable<Character> {
+public class CharacterEntity implements Mappable<Character> {
 
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)

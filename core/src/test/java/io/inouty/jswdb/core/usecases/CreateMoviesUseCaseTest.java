@@ -77,7 +77,7 @@ public class CreateMoviesUseCaseTest {
                 .withSummary("Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.")
                 .withTrailerUrl("/video/imdb/vi1723318041?playlistId=tt7286456&ref_=tt_ov_vi")
                 .build();
-        movies = new HashSet<>() {{
+        movies = new HashSet<Movie>() {{
             add(endgame);
             add(jocker);
             add(captainMarvel);
