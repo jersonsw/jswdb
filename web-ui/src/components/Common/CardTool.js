@@ -1,6 +1,6 @@
 // Card Tools
 // -----------------------------------
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 const checkRequiredProps = (props, propName, componentName) => {

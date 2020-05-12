@@ -7,9 +7,9 @@ server:
     max-threads: 5
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jswdb?useSSL=false
+    url: jdbc:postgresql://db:5556/jswdb?useSSL=false
     username: postgres
-    password: jnppem
+    password: postgres
     platform: postgres
     driver-class-name: org.postgresql.Driver
   jpa:

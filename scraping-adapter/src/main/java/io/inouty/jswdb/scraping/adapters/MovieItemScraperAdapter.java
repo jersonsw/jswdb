@@ -117,7 +117,10 @@ public class MovieItemScraperAdapter implements MovieItemScraperPort {
         if (plotSummaryWrapper != null) {
             Element plotSummary = plotSummaryWrapper.selectFirst(".plot_summary");
             if (plotSummary != null) {
-                builder.withSummary(plotSummary.text());
+                Element plotSummaryText = plotSummary.select(".summary_text").first();
+                if (plotSummaryText != null) {
+                    builder.withSummary(plotSummaryText.text());
+                }
             }
         }
 

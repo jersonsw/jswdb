@@ -9,8 +9,7 @@ import java.util.stream.Collectors;
 public class EntityMapper{
 
     public static GenreEntity from(Genre genre) {
-        return GenreEntity
-                .builder()
+        return GenreEntity.builder()
                 .withId(genre.getId())
                 .withName(genre.getName())
                 .build();

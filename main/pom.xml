@@ -18,11 +18,11 @@
         </dependency>
         <dependency>
             <groupId>io.inouty.jswdb</groupId>
-            <artifactId>data</artifactId>
+            <artifactId>data-adapter</artifactId>
         </dependency>
         <dependency>
             <groupId>io.inouty.jswdb</groupId>
-            <artifactId>scraping</artifactId>
+            <artifactId>scraping-adapter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -59,6 +59,10 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-runner</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>

@@ -9,8 +9,8 @@
         <version>1.0.0</version>
     </parent>
     <groupId>io.inouty.jswdb</groupId>
-    <artifactId>scraping</artifactId>
-    <name>scraping</name>
+    <artifactId>scraping-adapter</artifactId>
+    <name>scraping-adapter</name>
     <description>JSWDb Scraping</description>
     <version>1.0.0</version>
     <dependencies>

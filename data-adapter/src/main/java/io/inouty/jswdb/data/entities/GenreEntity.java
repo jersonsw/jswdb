@@ -2,16 +2,16 @@ package io.inouty.jswdb.data.entities;
 
 import io.inouty.jswdb.core.domain.movie.Genre;
 import io.inouty.jswdb.data.mappers.EntityMapper;
-import io.inouty.jswdb.data.mappers.Mapeable;
+import io.inouty.jswdb.data.mappers.Mappable;
 
 import javax.persistence.*;
 
 @Entity(name = "genre")
 @Table(schema = "works", name = "genres")
-public class GenreEntity implements Mapeable<Genre> {
+public class GenreEntity implements Mappable<Genre> {
 
     @Id()
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true, length = 30)

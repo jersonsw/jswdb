@@ -1,8 +1,9 @@
 package io.inouty.jswdb.data.entities;
 
 import io.inouty.jswdb.core.domain.movie.Movie;
+import io.inouty.jswdb.core.domain.movie.MovieWriter;
 import io.inouty.jswdb.data.mappers.EntityMapper;
-import io.inouty.jswdb.data.mappers.Mapeable;
+import io.inouty.jswdb.data.mappers.Mappable;
 
 import javax.persistence.*;
 import java.sql.Time;
@@ -12,7 +13,7 @@ import java.util.Set;
 
 @Entity(name = "movie")
 @Table(name = "movies", schema = "works")
-public class MovieEntity implements Mapeable<Movie> {
+public class MovieEntity implements Mappable<Movie> {
 
     @Id()
     @Column(length = 20)
@@ -51,31 +52,31 @@ public class MovieEntity implements Mapeable<Movie> {
     @OneToMany(
             mappedBy = "movie",
             fetch = FetchType.EAGER)
-    private Set<MovieGenreEntity> movieGenres = new HashSet<>();
+    private Set<MovieGenreEntity> movieGenres = new HashSet<MovieGenreEntity>();
 
     @OneToMany(
             mappedBy = "movie",
             fetch = FetchType.EAGER
     )
-    private Set<ReleaseInfoEntity> releaseInfo = new HashSet<>();
+    private Set<ReleaseInfoEntity> releaseInfo = new HashSet<ReleaseInfoEntity>();
 
     @OneToMany(
             fetch = FetchType.EAGER,
             mappedBy = "movie"
     )
-    private Set<MovieWriterEntity> movieWriters = new HashSet<>();
+    private Set<MovieWriterEntity> movieWriters = new HashSet<MovieWriterEntity>();
 
     @OneToMany(
             mappedBy = "movie",
             fetch = FetchType.EAGER
     )
-    private Set<MovieDirectorEntity> movieDirectors = new HashSet<>();
+    private Set<MovieDirectorEntity> movieDirectors = new HashSet<MovieDirectorEntity>();
 
     @OneToMany(
             fetch = FetchType.EAGER,
             mappedBy = "movie"
     )
-    private Set<MovieActorCharacterEntity> movieActorsCharacters = new HashSet<>();
+    private Set<MovieActorCharacterEntity> movieActorsCharacters = new HashSet<MovieActorCharacterEntity>();
 
     public MovieEntity() {
     }
@@ -298,11 +299,11 @@ public class MovieEntity implements Mapeable<Movie> {
         private Double ratingAvg;
         private Long ratingCount;
         private Integer metaScore;
-        private Set<MovieGenreEntity> movieGenres = new HashSet<>();
-        private Set<ReleaseInfoEntity> releaseInfo = new HashSet<>();
-        private Set<MovieWriterEntity> movieWriters = new HashSet<>();
-        private Set<MovieDirectorEntity> movieDirectors = new HashSet<>();
-        private Set<MovieActorCharacterEntity> movieActorsCharacters = new HashSet<>();
+        private Set<MovieGenreEntity> movieGenres = new HashSet<MovieGenreEntity>();
+        private Set<ReleaseInfoEntity> releaseInfo = new HashSet<ReleaseInfoEntity>();
+        private Set<MovieWriterEntity> movieWriters = new HashSet<MovieWriterEntity>();
+        private Set<MovieDirectorEntity> movieDirectors = new HashSet<MovieDirectorEntity>();
+        private Set<MovieActorCharacterEntity> movieActorsCharacters = new HashSet<MovieActorCharacterEntity>();
 
         private Builder() {
         }

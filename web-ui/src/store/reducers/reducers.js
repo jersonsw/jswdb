@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
 import settingsReducer from './settings.reducer.js';
 import themesReducer from './themes.reducers.js';

@@ -29,7 +29,7 @@ public class ScrapeMoviesIdsUseCaseTest {
 
     @BeforeEach
     void setUp() {
-        moviesIds = new HashSet<>() {{
+        moviesIds = new HashSet<String>() {{
             add("tt4154796");
             add("tt7286456");
             add("tt4154664");

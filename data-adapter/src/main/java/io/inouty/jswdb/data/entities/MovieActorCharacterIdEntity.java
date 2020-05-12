@@ -2,7 +2,7 @@ package io.inouty.jswdb.data.entities;
 
 import io.inouty.jswdb.core.domain.movie.MovieActorCharacterId;
 import io.inouty.jswdb.data.mappers.EntityMapper;
-import io.inouty.jswdb.data.mappers.Mapeable;
+import io.inouty.jswdb.data.mappers.Mappable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class MovieActorCharacterIdEntity implements Serializable, Mapeable<MovieActorCharacterId> {
+public class MovieActorCharacterIdEntity implements Serializable, Mappable<MovieActorCharacterId> {
 
     @Column(name = "movie_id", length = 20)
     private String movieId;

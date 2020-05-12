@@ -1,6 +1,6 @@
-import React, {Suspense, lazy} from 'react';
-import {withRouter, Switch, Route} from 'react-router-dom';
-import {TransitionGroup, CSSTransition} from 'react-transition-group';
+import React, {lazy, Suspense} from 'react';
+import {Route, Switch, withRouter} from 'react-router-dom';
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 /* loader component for Suspense*/
 import PageLoader from './components/Common/PageLoader';
 import Base from './components/Layout/Base';

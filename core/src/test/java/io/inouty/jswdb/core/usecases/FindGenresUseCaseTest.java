@@ -41,7 +41,7 @@ public class FindGenresUseCaseTest {
         genresPersistencePort = mock(GenresPersistencePort.class);
         findGenresUseCase = new FindGenresUseCase(genresPersistencePort);
         adventure = createGenre(1L, "Adventure");
-        genres = new HashSet<>() {{
+        genres = new HashSet<Genre>() {{
             add(adventure);
             add(createGenre(2L, "Sci-Fi"));
             add(createGenre(3L, "Action"));

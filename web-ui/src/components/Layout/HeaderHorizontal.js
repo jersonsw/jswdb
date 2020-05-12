@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { UncontrolledDropdown,
-         DropdownToggle,
-         DropdownMenu,
-         DropdownItem,
-         ListGroup,
-         ListGroupItem,
-         Nav,
-         Collapse,
-         NavItem,
-         NavLink,
-         NavbarToggler } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import {
+    Collapse,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
+    ListGroup,
+    ListGroupItem,
+    Nav,
+    NavbarToggler,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown
+} from 'reactstrap';
+import {Link} from 'react-router-dom';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as actions from '../../store/actions/actions';
 
 import ToggleFullscreen from '../Common/ToggleFullscreen';

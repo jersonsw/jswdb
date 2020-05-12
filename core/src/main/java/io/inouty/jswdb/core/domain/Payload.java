@@ -1,7 +1,8 @@
 package io.inouty.jswdb.core.domain;
 
-import io.inouty.jswdb.core.domain.movie.*;
 import io.inouty.jswdb.core.domain.movie.Character;
+import io.inouty.jswdb.core.domain.movie.*;
+
 import java.util.*;
 
 public final class Payload {
@@ -81,11 +82,11 @@ public final class Payload {
     public static final class Builder {
 
         private Movie movie;
-        private Map<Actor, Character> actorsCharacters = new HashMap<>();
-        private Set<Director> directors = new HashSet<>();
-        private Set<Genre> genres = new HashSet<>();
-        private Map<Writer, String> writersCredits = new HashMap<>();
-        private Set<ReleaseInfo> releaseInfos = new HashSet<>();
+        private Map<Actor, Character> actorsCharacters = new HashMap<Actor, Character>();
+        private Set<Director> directors = new HashSet<Director>();
+        private Set<Genre> genres = new HashSet<Genre>();
+        private Map<Writer, String> writersCredits = new HashMap<Writer,String>();
+        private Set<ReleaseInfo> releaseInfos = new HashSet<ReleaseInfo>();
 
         private Builder() {
         }

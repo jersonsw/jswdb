@@ -2,13 +2,13 @@ package io.inouty.jswdb.data.entities;
 
 import io.inouty.jswdb.core.domain.movie.MovieGenre;
 import io.inouty.jswdb.data.mappers.EntityMapper;
-import io.inouty.jswdb.data.mappers.Mapeable;
+import io.inouty.jswdb.data.mappers.Mappable;
 
 import javax.persistence.*;
 
 @Entity(name="movieGenre")
 @Table(schema = "works", name = "movies_genres")
-public class MovieGenreEntity implements Mapeable<MovieGenre> {
+public class MovieGenreEntity implements Mappable<MovieGenre> {
 
     @EmbeddedId
     private MovieGenreIdEntity id;

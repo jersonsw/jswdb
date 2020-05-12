@@ -1,4 +1,4 @@
-import { TOGGLE_SETTING, CHANGE_SETTING } from '../actions/actions';
+import {CHANGE_SETTING, TOGGLE_SETTING} from '../actions/actions';
 
 // Helpers to change class attribute
 const updateElementClass = (el, stat, name) => el && el.classList[stat ? 'add' : 'remove'](name)

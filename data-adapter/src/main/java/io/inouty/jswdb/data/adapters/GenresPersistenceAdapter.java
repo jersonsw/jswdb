@@ -28,10 +28,10 @@ public class GenresPersistenceAdapter implements GenresPersistencePort {
 
     @Override
     public Set<Genre> findAll() {
-        List<GenreEntity> genreEntities = this.repository.findAll();
-        if (genreEntities.isEmpty()) {
+        List<GenreEntity> genres = this.repository.findAll();
+        if (genres.isEmpty()) {
             return Collections.emptySet();
         }
-        return genreEntities.stream().map(e -> e.to()).collect(Collectors.toSet());
+        return genres.stream().map(e -> e.to()).collect(Collectors.toSet());
     }
 }

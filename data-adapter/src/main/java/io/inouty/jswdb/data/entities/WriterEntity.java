@@ -2,7 +2,7 @@ package io.inouty.jswdb.data.entities;
 
 import io.inouty.jswdb.core.domain.movie.Writer;
 import io.inouty.jswdb.data.mappers.EntityMapper;
-import io.inouty.jswdb.data.mappers.Mapeable;
+import io.inouty.jswdb.data.mappers.Mappable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity(name = "writer")
 @Table(schema = "works", name = "writers")
-public class WriterEntity implements Mapeable<Writer> {
+public class WriterEntity implements Mappable<Writer> {
 
     @Id
     @Column(nullable = false, length = 20)

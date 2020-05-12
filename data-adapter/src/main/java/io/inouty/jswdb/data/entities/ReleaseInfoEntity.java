@@ -2,7 +2,7 @@ package io.inouty.jswdb.data.entities;
 
 import io.inouty.jswdb.core.domain.movie.ReleaseInfo;
 import io.inouty.jswdb.data.mappers.EntityMapper;
-import io.inouty.jswdb.data.mappers.Mapeable;
+import io.inouty.jswdb.data.mappers.Mappable;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,7 +16,7 @@ import java.util.Date;
                 columnNames = {"movie_id", "country_code", "note", "release_date"}
         )
 )
-public class ReleaseInfoEntity implements Mapeable<ReleaseInfo> {
+public class ReleaseInfoEntity implements Mappable<ReleaseInfo> {
 
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)

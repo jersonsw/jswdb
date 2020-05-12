@@ -20,7 +20,7 @@ import java.util.Map;
 public class ImdbMovieWriter implements ItemWriter<Movie> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ImdbMovieWriter.class);
-    private static final Map<String, Object> HEADERS = new HashMap<String, Object>() {{
+    private static final Map<String, Object> HEADERS = new HashMap<String,Object>() {{
         put("Content-Type", "application/json");
     }};
     private final CreateMoviesPort createMoviesPort;
@@ -42,7 +42,7 @@ public class ImdbMovieWriter implements ItemWriter<Movie> {
     @Override
     public synchronized void write(List<? extends Movie> movies) {
         try {
-            this.createMoviesPort.saveAll(new HashSet<>(movies));
+            this.createMoviesPort.saveAll(new HashSet<Movie>(movies));
             moviesWritten += movies.size();
             Integer recordsCount = context.getInt("recordsCount");
             Long startTime = context.getLong("startTime");

@@ -10,7 +10,7 @@
     <artifactId>core</artifactId>
     <version>1.0.0</version>
     <name>core</name>
-    <description>JSWDb Domain</description>
+    <description>JSWDb Core</description>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

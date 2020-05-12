@@ -1,4 +1,4 @@
-import { TOGGLE_SETTING, CHANGE_SETTING } from '../actions/actions';
+import {CHANGE_SETTING, TOGGLE_SETTING} from '../actions/actions';
 
 const initialSettings = {
     /* Layout fixed. Scroll content only */
