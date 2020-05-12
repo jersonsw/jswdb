@@ -1,0 +1,22 @@
+version: '3'
+services:
+  jswdb:
+      container_name: 'jswdb'
+      build:
+        context: .
+      ports:
+        - "8081:8081"
+      image: jswdb:latest
+      expose:
+        - 8081
+      logging:
+        driver: json-file
+  db:
+    container_name: jswdb_pg
+    volumes:
+      - ~/docker_data/jswdb:/var/lib/postgresql/data
+    ports:
+      - "5556:5432"
+    restart: unless-stopped
+    image: postgres:12.2-alpine
+    env_file: database.env
