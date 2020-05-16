@@ -14,7 +14,6 @@ RUN mkdir -p main/target/dependency && (cd main/target/dependency; jar -xf ../*.
 FROM openjdk:8-jdk-alpine
 RUN addgroup -S jswdb && adduser -S jswdb -G jswdb
 USER jswdb
-EXPOSE 5432
 VOLUME /tmp
 ARG DEPENDENCY=/workspace/app/main/target/dependency
 COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib

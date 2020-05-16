@@ -1,22 +1,43 @@
 version: '3'
 services:
   jswdb:
-      container_name: 'jswdb'
-      build:
-        context: .
-      ports:
-        - "8081:8081"
-      image: jswdb:latest
-      expose:
-        - 8081
-      logging:
-        driver: json-file
+    container_name: 'jswdb'
+    build:
+      context: .
+    ports:
+      - 8081:8081
+    expose:
+      - 8081
+    depends_on:
+      - db
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db/jswdb?useSSL=false
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    links:
+      - db
+    image: jswdb:latest
+    logging:
+      driver: json-file
   db:
     container_name: jswdb_pg
     volumes:
-      - ~/docker_data/jswdb:/var/lib/postgresql/data
+      - ~/docker_data/jswdb/db:/var/lib/postgresql/data
     ports:
-      - "5556:5432"
+      - 5556:5432
     restart: unless-stopped
     image: postgres:12.2-alpine
     env_file: database.env
+  web-ui:
+    container_name: web-ui
+    build:
+      context: ./web-ui
+      dockerfile: Dockerfile
+    depends_on:
+      - jswdb
+    ports:
+      - 3001:80
+    links:
+      - jswdb
+    restart: unless-stopped
