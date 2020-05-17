@@ -1,3 +1,5 @@
 .idea
+./jswdb.iml
+.idea/workspace.xml
 logs
 web-ui/node_modules

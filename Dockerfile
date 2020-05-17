@@ -1,6 +1,5 @@
 FROM openjdk:8-jdk-alpine as build
 WORKDIR /workspace/app
-
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
@@ -8,7 +7,6 @@ COPY core core
 COPY data-adapter data-adapter
 COPY scraping-adapter scraping-adapter
 COPY main main
-
 RUN chmod +x mvnw
 RUN ./mvnw install -DskipTests
 RUN mkdir -p main/target/dependency && (cd main/target/dependency; jar -xf ../*.jar)
