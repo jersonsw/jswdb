@@ -1,8 +1,8 @@
 # JSWDb
 
-The aim of this project is to extract movies and TV Shows information from [IMDb](www.imdb.com) and store them in your own database for further queries. These information are extracted through web scraping, driven by a batch process.
+This project is meant for extracting movies and TV Shows information from [IMDb](www.imdb.com) and to store the obtained data into our own database for further queries. These information are extracted through web scraping, driven by a batch process.
 
-The project follows the principles of an [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) (aka Ports & Adapters) exposed by Alistair Cockburn. It is compound of the following modules:
+The project follows the principles of an [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) (aka Ports & Adapters) exposed by Alistair Cockburn. It's compound of the following modules:
 
 * **core**: _Domain + Ports + Usecases_.
 * **data-adapter**: _Adapters intended for persistence purposes_.
@@ -11,7 +11,7 @@ The project follows the principles of an [Hexagonal Architecture](https://alista
 * **web-ui**: _The web interface from which the batch process gets triggered and can be monitored_.
 ![Hexagonal Architecture](https://github.com/jersonsw/jswdb/blob/master/JSWDb.png?raw=true)
 
-The following are the technologies I've used for building this project:
+The following are the technologies I used for building this project:
 
 * [**Java**](https://docs.oracle.com/en/java/): the language used in the whole project at the backend.
 * [**Spring Boot**](https://spring.io/projects/spring-boot): the framework used for providing infrastructure and autoconfiguration. Also, several dependencies of it are used for exposing http and websocket endpoints, for batch processing, security, validation, etc...It is used at the **main** module.
