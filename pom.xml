@@ -34,7 +34,7 @@
         <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
         <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
         <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
-        <jsoup.version>1.12.1</jsoup.version>
+        <jsoup.version>1.14.2</jsoup.version>
         <hamcrest.version>2.1</hamcrest.version>
         <junit-jupiter.version>5.2.0</junit-jupiter.version>
         <spring-boot.version>2.0.4.RELEASE</spring-boot.version>
