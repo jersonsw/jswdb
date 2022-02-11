@@ -58,7 +58,7 @@
   "devDependencies": {
     "acorn-dynamic-import": "3.0.0",
     "imports-loader": "0.8.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "raw-loader": "0.5.1",
     "react-scripts-rewired": "3.0.1--latest1",
     "sass-loader": "7.1.0",
